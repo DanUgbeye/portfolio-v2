@@ -12,8 +12,12 @@ interface FormValues {
 }
 
 export default function ContactForm() {
-  const [interest, setInterest] = React.useState<stack | "other" | undefined>();
+  const [interest, setInterest] = React.useState<stack | "other" | "">("");
   const initialValues: FormValues = { email: "", name: "", message: "" };
+
+  React.useEffect(() => {
+    console.log(interest);
+  }, [interest]);
 
   return (
     <div>
@@ -36,6 +40,9 @@ export default function ContactForm() {
           if (values.message.length > 1024) {
             errors.message = "message should be 1024 characters max";
           }
+          if (!values.message) {
+            errors.message = "required";
+          }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
@@ -49,80 +56,74 @@ export default function ContactForm() {
         {({ isSubmitting, touched, errors }) => (
           <Form className=" flex flex-col gap-y-5 text-sm ">
             <fieldset className=" flex flex-wrap gap-x-5 gap-y-5 ">
-              {/* <div className=" flex sm:flex-wrap gap-y-5 gap-x-5 "> */}
-                <InterestButton
-                  active={interest === "frontend"}
-                  onClick={() => {
-                    if (interest === "frontend") {
-                      setInterest(undefined);
-                      return;
-                    }
-                    setInterest("frontend");
-                  }}
-                >
-                  Frontend 
-                  <span className=" hidden ">Web Development</span>                  
-                </InterestButton>
+              <InterestButton
+                active={interest === "frontend"}
+                onClick={() => {
+                  if (interest === "frontend") {
+                    setInterest("");
+                    return;
+                  }
+                  setInterest("frontend");
+                }}
+              >
+                Frontend
+                <span className=" hidden ">Web Development</span>
+              </InterestButton>
 
-                <InterestButton
-                  active={interest === "backend"}
-                  onClick={() => {
-                    if (interest === "backend") {
-                      setInterest(undefined);
-                      return;
-                    }
-                    setInterest("backend");
-                  }}
-                >
-                  Backend 
-                  <span className=" hidden ">Web Development</span> 
-                </InterestButton>
-              {/* </div> */}
+              <InterestButton
+                active={interest === "backend"}
+                onClick={() => {
+                  if (interest === "backend") {
+                    setInterest("");
+                    return;
+                  }
+                  setInterest("backend");
+                }}
+              >
+                Backend
+                <span className=" hidden ">Web Development</span>
+              </InterestButton>
 
-              {/* <div className=" flex sm:flex-wrap gap-y-5 gap-x-5 "> */}
-                <InterestButton
-                  active={interest === "fullstack"}
-                  onClick={() => {
-                    if (interest === "fullstack") {
-                      setInterest(undefined);
-                      return;
-                    }
-                    setInterest("fullstack");
-                  }}
-                >
-                  Full Stack 
-                  <span className=" hidden ">Web Development</span> 
-                </InterestButton>
+              <InterestButton
+                active={interest === "fullstack"}
+                onClick={() => {
+                  if (interest === "fullstack") {
+                    setInterest("");
+                    return;
+                  }
+                  setInterest("fullstack");
+                }}
+              >
+                Full Stack
+                <span className=" hidden ">Web Development</span>
+              </InterestButton>
 
-                <InterestButton
-                  active={interest === "iot"}
-                  onClick={() => {
-                    if (interest === "iot") {
-                      setInterest(undefined);
-                      return;
-                    }
-                    setInterest("iot");
-                  }}
-                >
-                  IOT 
-                  <span className=" hidden "> & Embedded Systems Prog.</span> 
-                </InterestButton>
-              {/* </div> */}
+              <InterestButton
+                active={interest === "iot"}
+                onClick={() => {
+                  if (interest === "iot") {
+                    setInterest("");
+                    return;
+                  }
+                  setInterest("iot");
+                }}
+              >
+                IOT
+                <span className=" hidden "> & Embedded Systems Prog.</span>
+              </InterestButton>
 
-              {/* <div className=" flex sm:flex-wrap gap-y-5 gap-x-5 "> */}
-                <InterestButton
-                  active={interest === "other"}
-                  onClick={() => {
-                    if (interest === "other") {
-                      setInterest(undefined);
-                      return;
-                    }
-                    setInterest("other");
-                  }}
-                >
-                  Other
-                </InterestButton>
-              {/* </div> */}
+              <InterestButton
+                active={interest === "other"}
+                onClick={() => {
+                  if (interest === "other") {
+                    setInterest("");
+                    return;
+                  }
+                  setInterest("other");
+                }}
+              >
+                Other
+              </InterestButton>
             </fieldset>
 
             <fieldset className=" flex flex-col gap-y-1 ">
@@ -177,7 +178,7 @@ export default function ContactForm() {
             />
 
             <button
-              className=" h-10 bg-violet-light px-4 rounded-lg w-fit text-lg "
+              className=" h-10 bg-violet-light disabled:bg-violet-dark/50 disabled:text-violet-light px-4 rounded-lg w-fit text-lg "
               type="submit"
               disabled={isSubmitting}
             >
