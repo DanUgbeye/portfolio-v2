@@ -1,15 +1,20 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormikErrors } from "formik/dist/types";
+import InterestButton from "./InterestButton.component";
+import { stack } from "../../../../../app.interface";
+import CustomTextArea from "./CustomTextArea.component";
 
-// Render Prop
 interface FormValues {
   email: string;
   name: string;
+  message: string;
 }
 
 export default function ContactForm() {
-  const initialValues: FormValues = { email: "", name: "" };
+  const [interest, setInterest] = React.useState<stack | "other" | undefined>();
+  const initialValues: FormValues = { email: "", name: "", message: "" };
+
   return (
     <div>
       <Formik
@@ -21,19 +26,105 @@ export default function ContactForm() {
           } else if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
-            errors.email = "Invalid email address";
+            errors.email = "invalid email address";
+          }
+
+          if (!values.name) {
+            errors.name = "required";
+          }
+
+          if (values.message.length > 1024) {
+            errors.message = "message should be 1024 characters max";
           }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
+          const formValues = { ...values, interest };
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            alert(JSON.stringify(formValues, null, 2));
             setSubmitting(false);
           }, 400);
         }}
       >
-        {({ isSubmitting, touched }) => (
+        {({ isSubmitting, touched, errors }) => (
           <Form className=" flex flex-col gap-y-5 text-sm ">
+            <fieldset className=" flex flex-wrap gap-x-5 gap-y-5 ">
+              {/* <div className=" flex sm:flex-wrap gap-y-5 gap-x-5 "> */}
+                <InterestButton
+                  active={interest === "frontend"}
+                  onClick={() => {
+                    if (interest === "frontend") {
+                      setInterest(undefined);
+                      return;
+                    }
+                    setInterest("frontend");
+                  }}
+                >
+                  Frontend 
+                  <span className=" hidden ">Web Development</span>                  
+                </InterestButton>
+
+                <InterestButton
+                  active={interest === "backend"}
+                  onClick={() => {
+                    if (interest === "backend") {
+                      setInterest(undefined);
+                      return;
+                    }
+                    setInterest("backend");
+                  }}
+                >
+                  Backend 
+                  <span className=" hidden ">Web Development</span> 
+                </InterestButton>
+              {/* </div> */}
+
+              {/* <div className=" flex sm:flex-wrap gap-y-5 gap-x-5 "> */}
+                <InterestButton
+                  active={interest === "fullstack"}
+                  onClick={() => {
+                    if (interest === "fullstack") {
+                      setInterest(undefined);
+                      return;
+                    }
+                    setInterest("fullstack");
+                  }}
+                >
+                  Full Stack 
+                  <span className=" hidden ">Web Development</span> 
+                </InterestButton>
+
+                <InterestButton
+                  active={interest === "iot"}
+                  onClick={() => {
+                    if (interest === "iot") {
+                      setInterest(undefined);
+                      return;
+                    }
+                    setInterest("iot");
+                  }}
+                >
+                  IOT 
+                  <span className=" hidden "> & Embedded Systems Prog.</span> 
+                </InterestButton>
+              {/* </div> */}
+
+              {/* <div className=" flex sm:flex-wrap gap-y-5 gap-x-5 "> */}
+                <InterestButton
+                  active={interest === "other"}
+                  onClick={() => {
+                    if (interest === "other") {
+                      setInterest(undefined);
+                      return;
+                    }
+                    setInterest("other");
+                  }}
+                >
+                  Other
+                </InterestButton>
+              {/* </div> */}
+            </fieldset>
+
             <fieldset className=" flex flex-col gap-y-1 ">
               <label htmlFor="name" className=" block ">
                 Name
@@ -41,15 +132,19 @@ export default function ContactForm() {
               <Field
                 id="name"
                 className={
-                  " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-sm "
+                  " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 "
                 }
                 type="text"
                 name="name"
                 placeholder="Enter your Name"
               />
-              {touched.name && (
-                <ErrorMessage className=" text-red-400 text-sm " name="name" component="div" />
-              )}
+              <ErrorMessage
+                className={` ${
+                  touched.name && errors.name ? "visible" : "invisible"
+                } text-red-500 text-xsm ml-2 `}
+                name="name"
+                component="div"
+              />
             </fieldset>
 
             <fieldset className=" flex flex-col gap-y-1 ">
@@ -59,18 +154,33 @@ export default function ContactForm() {
               <Field
                 id="email"
                 className={
-                  " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-sm "
+                  " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 "
                 }
                 type="email"
                 name="email"
                 placeholder="Enter your Email"
               />
-              {touched.email && (
-                <ErrorMessage className=" text-red-400 text-sm " name="email" component="div" />
-              )}
+              <ErrorMessage
+                className={` ${
+                  touched.email && errors.email ? "visible" : "invisible"
+                } text-red-500 text-xsm ml-2 `}
+                name="email"
+                component="div"
+              />
             </fieldset>
 
-            <button className=" h-12 bg-violet-light px-4 rounded-lg w-fit text-lg " type="submit" disabled={isSubmitting}>
+            <CustomTextArea
+              rows={8}
+              name="message"
+              placeholder="Enter your Message"
+              label="Message"
+            />
+
+            <button
+              className=" h-10 bg-violet-light px-4 rounded-lg w-fit text-lg "
+              type="submit"
+              disabled={isSubmitting}
+            >
               Send
             </button>
           </Form>
