@@ -15,9 +15,11 @@ module.exports = {
         "violet-light": "#676CDB",
         "violet-dark": "#6C71E5",
         "off-white": "#7F848B",
-        "border-gray": "#898989"
+        "border-gray": "#898989",
+        "footer": "#080F1A"
       },
       fontSize: {
+        "xsm": "0.8rem",
         "normal": "1.4rem"
       }
     },
