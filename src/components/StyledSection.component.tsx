@@ -7,7 +7,7 @@ export interface StyledSectionProps
 
 export default function StyledSection(props: StyledSectionProps) {
   return (
-    <section className={` px-4 sm:px-[5%] lg:px-[8rem] ${props.className}`}>
+    <section className={` px-4 sm:px-[5%] xl:px-[8rem] ${props.className}`}>
       {props.children}
     </section>
   );
