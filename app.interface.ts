@@ -3,3 +3,5 @@ export interface ReactElementProps
     React.HTMLAttributes<HTMLElement>,
     HTMLElement
   > {}
+
+export type stack = "frontend" | "backend" | "fullstack" | "iot";
