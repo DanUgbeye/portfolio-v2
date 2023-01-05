@@ -6,7 +6,7 @@ import EmailIcon from "../../assets/svg/email.svg";
 export default function Footer() {
   return (
     <StyledSection  className=" bg-footer ">
-      <div className=" py-[4rem] gap-y-6 flex flex-col">
+      <div className=" py-[2rem] sm:py-[4rem] gap-y-6 flex flex-col">
         <h4 className=" text-sm font-bold text-center ">Follow me:</h4>
         <div className=" w-fit mx-auto flex gap-x-9 ">
           <FooterLink>
