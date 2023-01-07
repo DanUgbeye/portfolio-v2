@@ -17,6 +17,8 @@ export default function AppRoutes() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
           </Route>
+
+          <Route path="*" element={<>Not found</>} />
         </Route>
       </Routes>
     </BrowserRouter>

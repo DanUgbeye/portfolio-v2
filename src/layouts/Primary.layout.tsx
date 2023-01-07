@@ -2,13 +2,14 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import useNav from "../hooks/useNav.hook";
 
 export default function PrimaryLayout() {
-  // const { navExpanded, closeNav } = useNav();
+  const { navExpanded, closeNav } = useNav();
 
   // handles closing open global states
   function handleGlobalClick() {
-    // navExpanded && closeNav();
+    navExpanded && closeNav();
   }
 
   return (

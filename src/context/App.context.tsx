@@ -1,11 +1,15 @@
 import React, { PropsWithChildren } from "react";
 import ProjectContextProvider from "./Projects.context";
 
-export const AppContext = React.createContext({
+export interface AppContextProps {
+  navExpanded: boolean;
+  openNav: () => void;
+  closeNav: () => void;
+}
+export const AppContext = React.createContext<AppContextProps>({
   navExpanded: false,
   openNav: () => {},
   closeNav: () => {},
-
 });
 
 export interface AppContextProviderProps extends PropsWithChildren {}
@@ -29,12 +33,10 @@ export default function AppContextProvider(props: AppContextProviderProps) {
       value={{
         navExpanded,
         openNav,
-        closeNav
+        closeNav,
       }}
     >
-      <ProjectContextProvider>
-        {props.children}
-      </ProjectContextProvider>
+      <ProjectContextProvider>{props.children}</ProjectContextProvider>
     </AppContext.Provider>
   );
 }
