@@ -15,10 +15,6 @@ export default function ContactForm() {
   const [interest, setInterest] = React.useState<stack | "other" | "">("");
   const initialValues: FormValues = { email: "", name: "", message: "" };
 
-  React.useEffect(() => {
-    console.log(interest);
-  }, [interest]);
-
   return (
     <div>
       <Formik
