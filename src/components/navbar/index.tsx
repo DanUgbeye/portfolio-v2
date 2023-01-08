@@ -18,26 +18,36 @@ export default function Navbar() {
           <span className=" font-normal ">Ugbeye</span>
         </h3>
 
+        {/* OPEN NAV BUTTON */}
         <button
-          className=" ml-auto md:hidden z-50 hover:bg-white/5 p-2 rounded-full "
+          className={` ${
+            navExpanded && "hidden"
+          } ml-auto md:hidden z-50 hover:bg-white/5 p-2 rounded-full `}
           onClick={() => {
-            if (navExpanded) return closeNav();
             openNav();
           }}
         >
-          {navExpanded ? (
-            <img src={CloseIcon} alt="menu" className=" w-7 " />
-          ) : (
-            <img src={MenuIcon} alt="menu" className=" w-7 " />
-          )}
+          <img src={MenuIcon} alt="menu" className=" w-7 " />
         </button>
 
         <div
           className={` ${
             navExpanded ? " translate-x-0 " : " translate-x-[200%] "
-          } fixed md:relative w-[300px] md:w-fit bg-deep-blue-900/50 backdrop-blur-md md:bg-transparent h-screen md:h-fit top-0 md:top-[unset] right-0 md:right-[unset] text-sm ml-auto overflow-auto md:translate-x-0 transition-transform duration-[400ms] `}
+          } fixed md:relative w-full max-w-[300px] md:w-fit md:max-w-none bg-deep-blue-900/50 backdrop-blur-md md:bg-transparent h-screen md:h-fit top-0 md:top-[unset] right-0 md:right-[unset] text-sm ml-auto overflow-y-auto md:overflow-none md:translate-x-0 transition-transform duration-[400ms] `}
           onClick={(e) => e.stopPropagation()}
         >
+          {/* CLOSE NAV BUTTON */}
+          <button
+            className={` ${
+              !navExpanded && "hidden"
+            } ml-auto absolute top-5 right-[2rem] mt- md:hidden z-50 hover:bg-white/5 p-2 rounded-full `}
+            onClick={() => {
+              closeNav();
+            }}
+          >
+            <img src={CloseIcon} alt="menu" className=" w-7 " />
+          </button>
+
           <div className=" py-[5rem] px-[1rem] md:p-0 flex flex-col md:flex-row md:items-center gap-x-4 gap-y-4  ">
             <NavBarLink to={"/"}>Home</NavBarLink>
 
