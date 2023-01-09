@@ -15,10 +15,6 @@ export default function ContactForm() {
   const [interest, setInterest] = React.useState<stack | "other" | "">("");
   const initialValues: FormValues = { email: "", name: "", message: "" };
 
-  React.useEffect(() => {
-    console.log(interest);
-  }, [interest]);
-
   return (
     <div>
       <Formik
@@ -66,7 +62,7 @@ export default function ContactForm() {
                   setInterest("frontend");
                 }}
               >
-                Frontend
+                <span className="  ">Frontend</span>
                 <span className=" hidden ">Web Development</span>
               </InterestButton>
 
@@ -80,7 +76,7 @@ export default function ContactForm() {
                   setInterest("backend");
                 }}
               >
-                Backend
+                <span className="  ">Backend</span>
                 <span className=" hidden ">Web Development</span>
               </InterestButton>
 
@@ -94,7 +90,7 @@ export default function ContactForm() {
                   setInterest("fullstack");
                 }}
               >
-                Full Stack
+                <span className="  ">Full Stack</span>
                 <span className=" hidden ">Web Development</span>
               </InterestButton>
 
@@ -108,7 +104,7 @@ export default function ContactForm() {
                   setInterest("iot");
                 }}
               >
-                IOT
+                <span className="  ">IOT</span>
                 <span className=" hidden "> & Embedded Systems Prog.</span>
               </InterestButton>
 
