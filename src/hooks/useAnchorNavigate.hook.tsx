@@ -8,10 +8,11 @@ export default function useAnchorNavigate() {
       const { pathname: currentPathname } = window.location;
 
       if (pathname === currentPathname) {
-        // scroll to select element
         if (!hash) {
+          // scroll to top
           return scrollIntoView();
         }
+        // scroll to element with has
         return scrollIntoView(hash);
       } else {
         // change location
