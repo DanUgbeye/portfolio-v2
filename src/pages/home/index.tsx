@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "./components/hero";
-import SkillSection from "./components/skill";
+import AboutSection from "./components/about";
 import ServicesSection from "./components/services";
 import PortfolioSection from "./components/portfolio";
 import TestimonialSection from "./components/testimonials";
@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <section className="  ">
       <HeroSection />
-      <SkillSection />
+      <AboutSection />
       <ServicesSection />
       <PortfolioSection />
       <TestimonialSection />
