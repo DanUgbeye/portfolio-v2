@@ -6,7 +6,7 @@ import PrimaryLayout from "../layouts/Primary.layout";
 import HomePage from "../pages/home";
 import AboutPage from "../pages/about";
 import ProjectsPage from "../pages/project";
-import NotFound from "../pages/404";
+import NotFoundPage from "../pages/404";
 
 export default function AppRoutes() {
   return (
@@ -17,7 +17,7 @@ export default function AppRoutes() {
             <Route index path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Route>
       </Routes>
