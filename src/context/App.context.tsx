@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from "react";
+import { useScrollLock } from "../hooks/useScrollLock.hook";
 import ProjectContextProvider from "./Projects.context";
 
 export interface AppContextProps {
@@ -17,6 +18,7 @@ export interface AppContextProviderProps extends PropsWithChildren {}
 export default function AppContextProvider(props: AppContextProviderProps) {
   // sidenav state and methods
   const [navExpanded, setNavExpanded] = React.useState(false);
+  const { lockScroll, unlockScroll } = useScrollLock();
 
   const openNav = React.useCallback(() => {
     if (navExpanded) return;
@@ -27,6 +29,26 @@ export default function AppContextProvider(props: AppContextProviderProps) {
     if (!navExpanded) return;
     setNavExpanded(false);
   }, [navExpanded]);
+
+  // closes the nav if screensize is large 
+  const syncScrollLock = () => {
+    if (window.visualViewport?.width && window.visualViewport?.width > 769) {
+      setNavExpanded(false);
+    }
+  };
+
+  // responsible for locking scroll on nav open in small screens
+  React.useEffect(() => {
+    navExpanded ? lockScroll() : unlockScroll();
+  }, [navExpanded]);
+
+  // add listener for closing nav on large screen size 
+  React.useEffect(() => {
+    window.addEventListener("resize", syncScrollLock);
+    return () => {
+      window.removeEventListener("resize", syncScrollLock);
+    };
+  }, []);
 
   return (
     <AppContext.Provider

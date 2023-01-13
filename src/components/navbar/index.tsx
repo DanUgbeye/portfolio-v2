@@ -1,11 +1,9 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
 import useNav from "../../hooks/useNav.hook";
 import StyledSection from "../StyledSection.component";
-import AnchorLink from "./AnchorLink.component";
+import NavBarLink from "./NavBarLink.component";
 import MenuIcon from "../../assets/svg/menu.svg";
 import CloseIcon from "../../assets/svg/arrow-right.svg";
-import NavBarLink from "./NavBarLink.component";
 
 export default function Navbar() {
   const { navExpanded, openNav, closeNav } = useNav();
@@ -33,7 +31,7 @@ export default function Navbar() {
         <div
           className={` ${
             navExpanded ? " translate-x-0 " : " translate-x-[200%] "
-          } fixed md:relative w-full max-w-[300px] md:w-fit md:max-w-none bg-deep-blue-900/50 backdrop-blur-md md:bg-transparent h-screen md:h-fit top-0 md:top-[unset] right-0 md:right-[unset] text-sm ml-auto overflow-y-auto md:overflow-none md:translate-x-0 transition-transform duration-[400ms] `}
+          } fixed md:relative w-full max-w-[300px] md:w-fit md:max-w-none bg-deep-blue-900/50 backdrop-blur-md md:bg-transparent h-screen md:h-fit top-0 md:top-[unset] right-0 md:right-[unset] text-sm ml-automd:overflow-none md:translate-x-0 transition-transform duration-[400ms] pt-[5rem] px-2 md:p-0 md:ml-auto m-0  `}
           onClick={(e) => e.stopPropagation()}
         >
           {/* CLOSE NAV BUTTON */}
@@ -48,23 +46,25 @@ export default function Navbar() {
             <img src={CloseIcon} alt="menu" className=" w-7 " />
           </button>
 
-          <div className=" py-[5rem] px-[1rem] md:p-0 flex flex-col md:flex-row md:items-center gap-x-4 gap-y-4  ">
-            <NavBarLink to={"/"}>Home</NavBarLink>
+          <div className=" overflow-y-auto h-full p-[1rem] md:p-0 ">
+            <div className=" flex flex-col md:flex-row md:items-center gap-x-4 gap-y-4  ">
+              <NavBarLink to={"/"}>Home</NavBarLink>
 
-            <NavBarLink to={"/#about"}>About</NavBarLink>
+              <NavBarLink to={"/#about"}>About</NavBarLink>
 
-            <NavBarLink to={"/#skills"}>Skills</NavBarLink>
+              <NavBarLink to={"/#skills"}>Skills</NavBarLink>
 
-            <NavBarLink to={"/#services"}>Services</NavBarLink>
+              <NavBarLink to={"/#services"}>Services</NavBarLink>
 
-            <NavBarLink to={"/#projects"}>Projects</NavBarLink>
+              <NavBarLink to={"/#projects"}>Projects</NavBarLink>
 
-            <NavBarLink
-              className=" bg-violet-light hover:bg-violet-light/80 text-white "
-              to={"/#contact"}
-            >
-              Hire Me
-            </NavBarLink>
+              <NavBarLink
+                className=" bg-violet-light hover:bg-violet-light/70 focus:bg-violet-light text-white "
+                to={"/#contact"}
+              >
+                Hire Me
+              </NavBarLink>
+            </div>
           </div>
         </div>
       </div>
