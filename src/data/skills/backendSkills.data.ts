@@ -45,7 +45,8 @@ const backendSkills = [
   },
   {
     name: "Stoplight Studio",
-    svg: StoplightIcon
+    svg: StoplightIcon,
+    whiteBg: true
   },
 ];
  
