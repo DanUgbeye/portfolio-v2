@@ -1,30 +1,31 @@
-import ReactIcon from "../../assets/svg/react.svg";
+import CppIcon from "../../assets/svg/skills/other/c++.svg";
+import ArduinoIcon from "../../assets/svg/skills/other/arduino.svg";
+import GitIcon from "../../assets/svg/skills/other/git.svg";
+import GithubIcon from "../../assets/svg/skills/other/github.svg";
+import VsCodeIcon from "../../assets/svg/skills/other/vsCode.svg";
 
 const otherSkills = [
   {
     name: "C++",
-    svg: ReactIcon
+    svg: CppIcon,
   },
   {
-    name: "VS Code",
-    svg: ReactIcon
-  },
-  {
-    name: "Postman",
-    svg: ReactIcon
+    name: "Arduino",
+    svg: ArduinoIcon,
   },
   {
     name: "Git",
-    svg: ReactIcon
+    svg: GitIcon,
   },
   {
     name: "GitHub",
-    svg: ReactIcon
+    svg: GithubIcon,
+    whiteBg: true
   },
   {
-    name: "Mongo DB",
-    svg: ReactIcon
-  }
+    name: "VS Code",
+    svg: VsCodeIcon,
+  },
 ];
- 
+
 export default otherSkills;
