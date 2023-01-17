@@ -1,10 +1,10 @@
 import React from "react";
 import useAnchorNavigate from "../../../../hooks/useAnchorNavigate.hook";
-import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 export default function IntroText() {
   const anchorNavigate = useAnchorNavigate();
-  
+
   return (
     <div className=" max-w-3xl text-sm flex flex-col relative mb-12 w-full ">
       <div className=" flex flex-col gap-y-8 ">
@@ -33,24 +33,36 @@ export default function IntroText() {
       <div className=" hidden md:flex flex-col md:flex-row gap-x-6 gap-y-6 md:items-center mt-16  ">
         <div className=" font-bold my-auto md:self-start ">Check out my</div>
         <div className=" flex gap-x-5 items-center md:self-start ">
-          <button className=" rounded-full h-12 bg-off-white aspect-square grid place-items-center overflow-hidden hover:bg-gray-300/50 hover:shadow-gray-200/50 hover:shadow-round-lg focus:shadow-gray-200/50 focus:shadow-round-lg group transition-colors duration-300 ">
-            <FaEnvelope
-              size={20}
-              className=" text-deep-blue-900 group-hover:text-deep-blue-900/80 transition-all duration-300 "
-            />
-          </button>
-          <button className=" rounded-full h-12 bg-off-white aspect-square grid place-items-center overflow-hidden hover:bg-gray-300/50 hover:shadow-gray-200/50 hover:shadow-round-lg focus:shadow-gray-200/50 focus:shadow-round-lg group transition-all duration-300 ">
-            <FaGithub
-              size={24}
-              className=" text-deep-blue-900 group-hover:text-deep-blue-900/80 transition-all duration-300 "
-            />
-          </button>
-          <button className=" rounded-full h-12 bg-off-white aspect-square grid place-items-center overflow-hidden hover:bg-gray-300/50 hover:shadow-gray-200/50 hover:shadow-round-lg focus:shadow-gray-200/50 focus:shadow-round-lg group transition-all duration-300 ">
+          <a
+            href={"https://linkedin.com/in/danielugbeye"}
+            target={"_blank"}
+            className=" rounded-full h-12 bg-off-white aspect-square grid place-items-center overflow-hidden hover:bg-gray-300/50 hover:shadow-gray-200/50 hover:shadow-round-lg focus:shadow-gray-200/50 focus:shadow-round-lg group transition-colors duration-300 "
+          >
             <FaLinkedinIn
               size={20}
               className=" text-deep-blue-900 group-hover:text-deep-blue-900/80 transition-all duration-300 "
             />
-          </button>
+          </a>
+          <a
+            href={"https://github.com/danugbeye"}
+            target={"_blank"}
+            className=" rounded-full h-12 bg-off-white aspect-square grid place-items-center overflow-hidden hover:bg-gray-300/50 hover:shadow-gray-200/50 hover:shadow-round-lg focus:shadow-gray-200/50 focus:shadow-round-lg group transition-all duration-300 "
+          >
+            <FaGithub
+              size={24}
+              className=" text-deep-blue-900 group-hover:text-deep-blue-900/80 transition-all duration-300 "
+            />
+          </a>
+          <a
+            href={"https://twitter.com/Ugbeye_Daniel"}
+            target={"_blank"}
+            className=" rounded-full h-12 bg-off-white aspect-square grid place-items-center overflow-hidden hover:bg-gray-300/50 hover:shadow-gray-200/50 hover:shadow-round-lg focus:shadow-gray-200/50 focus:shadow-round-lg group transition-all duration-300 "
+          >
+            <FaTwitter
+              size={20}
+              className=" text-deep-blue-900 group-hover:text-deep-blue-900/80 transition-all duration-300 "
+            />
+          </a>
         </div>
       </div>
     </div>
