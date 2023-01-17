@@ -8,7 +8,7 @@ export interface SkillProps {
 
 export default function Skill(props: SkillProps) {
   return (
-    <div className=" flex gap-x-2 items-center py-3 w-[10rem] md:w-[12rem] ">
+    <div className=" flex gap-x-2 items-center py-3 w-[10rem] ">
       <img
         src={props.svg}
         alt={props.name}
