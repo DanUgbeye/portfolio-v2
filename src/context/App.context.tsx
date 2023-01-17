@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 import { ToastContainer } from "react-toastify";
 import { useScrollLock } from "../hooks/useScrollLock.hook";
 import ProjectContextProvider from "./Projects.context";
-import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.min.css";
 
 export interface AppContextProps {
   navExpanded: boolean;
