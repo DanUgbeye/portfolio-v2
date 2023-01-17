@@ -40,7 +40,7 @@ const backendSkills = [
   },
   
   {
-    name: "Swagger API Docs",
+    name: "Swagger Docs",
     svg: SwaggerIcon
   },
   {
