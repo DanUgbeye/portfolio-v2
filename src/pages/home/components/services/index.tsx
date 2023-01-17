@@ -12,7 +12,7 @@ export default function ServicesSection() {
 
       <div
         id="services"
-        className=" grid grid-cols-[repeat(auto-fit,_minmax(15rem,_1fr))] gap-x-5 gap-y-5 "
+        className=" grid grid-cols-[repeat(auto-fit,_minmax(20rem,_1fr))] gap-x-5 gap-y-5 "
       >
         {services.map((service, index) => (
           <Service key={index} {...service} />
