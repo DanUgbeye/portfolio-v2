@@ -1,6 +1,8 @@
 import React, { PropsWithChildren } from "react";
+import { ToastContainer } from "react-toastify";
 import { useScrollLock } from "../hooks/useScrollLock.hook";
 import ProjectContextProvider from "./Projects.context";
+import "react-toastify/dist/ReactToastify.min.css";
 
 export interface AppContextProps {
   navExpanded: boolean;
@@ -30,7 +32,7 @@ export default function AppContextProvider(props: AppContextProviderProps) {
     setNavExpanded(false);
   }, [navExpanded]);
 
-  // closes the nav if screensize is large 
+  // closes the nav if screensize is large
   const syncScrollLock = () => {
     if (window.visualViewport?.width && window.visualViewport?.width > 769) {
       setNavExpanded(false);
@@ -42,7 +44,7 @@ export default function AppContextProvider(props: AppContextProviderProps) {
     navExpanded ? lockScroll() : unlockScroll();
   }, [navExpanded]);
 
-  // add listener for closing nav on large screen size 
+  // add listener for closing nav on large screen size
   React.useEffect(() => {
     window.addEventListener("resize", syncScrollLock);
     return () => {
@@ -58,6 +60,12 @@ export default function AppContextProvider(props: AppContextProviderProps) {
         closeNav,
       }}
     >
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        newestOnTop={false}
+        theme="colored"
+      />
       <ProjectContextProvider>{props.children}</ProjectContextProvider>
     </AppContext.Provider>
   );

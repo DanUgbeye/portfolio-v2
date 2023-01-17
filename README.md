@@ -1,3 +1,3 @@
 # Daniel Ugbeye Portfolio
 
-[Live site]().
+[Live site](https://danielugbeye.netlify.app).

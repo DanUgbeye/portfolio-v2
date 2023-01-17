@@ -1,41 +1,51 @@
-import ReactIcon from "../../assets/svg/react.svg";
+import HtmlIcon from "../../assets/svg/skills/frontend/html.svg";
+import CssIcon from "../../assets/svg/skills/frontend/css.svg";
+import JavascriptIcon from "../../assets/svg/skills/frontend/javascript.svg";
+import ReactIcon from "../../assets/svg/skills/frontend/react.svg";
+import NextjsIcon from "../../assets/svg/skills/frontend/nextjs.svg";
+import TailwindcssIcon from "../../assets/svg/skills/frontend/tailwindcss.svg";
+import TypescriptIcon from "../../assets/svg/skills/frontend/typescript.svg";
+import FirebaseIcon from "../../assets/svg/skills/frontend/firebase.svg";
+import ReduxIcon from "../../assets/svg/skills/frontend/redux.svg";
+// import FirebaseIcon from "../../assets/svg/skills/frontend/firebase.svg";
 
 const frontendSkills = [
   {
     name: "HTML",
-    svg: ReactIcon
+    svg: HtmlIcon
   },
   {
     name: "CSS",
-    svg: ReactIcon
+    svg: CssIcon
   },
   {
     name: "JavaScript",
-    svg: ReactIcon
+    svg: JavascriptIcon
+  },
+  {
+    name: "TypeScript",
+    svg: TypescriptIcon
   },
   {
     name: "React",
     svg: ReactIcon
   },
   {
-    name: "Tailwind CSS",
-    svg: ReactIcon
+    name: "Next JS",
+    svg: NextjsIcon,
+    whiteBg: true
   },
   {
-    name: "TypeScript",
-    svg: ReactIcon
+    name: "Tailwind CSS",
+    svg: TailwindcssIcon
   },
   {
     name: "Firebase",
-    svg: ReactIcon
-  },
-  {
-    name: "React Context API",
-    svg: ReactIcon
+    svg: FirebaseIcon
   },
   {
     name: "Redux Toolkit",
-    svg: ReactIcon
+    svg: ReduxIcon
   }
 ];
  

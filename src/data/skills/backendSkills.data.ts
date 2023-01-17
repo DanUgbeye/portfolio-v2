@@ -1,38 +1,53 @@
-import ReactIcon from "../../assets/svg/react.svg";
+import NodeJsIcon from "../../assets/svg/skills/backend/nodejs.svg";
+import ExpressJsIcon from "../../assets/svg/skills/backend/expressjs.svg";
+import PhpIcon from "../../assets/svg/skills/backend/php.svg";
+import MySqlIcon from "../../assets/svg/skills/backend/mysql.svg";
+import PostgreSqlIcon from "../../assets/svg/skills/backend/postgresql.svg";
+import MongoDbIcon from "../../assets/svg/skills/backend/mongodb.svg";
+import PostmanIcon from "../../assets/svg/skills/backend/postman.svg";
+import SwaggerIcon from "../../assets/svg/skills/backend/swagger.svg";
+import StoplightIcon from "../../assets/svg/skills/backend/stoplight.svg";
 
 const backendSkills = [
   {
     name: "Node JS",
-    svg: ReactIcon
+    svg: NodeJsIcon
   },
   {
     name: "Express JS",
-    svg: ReactIcon
+    svg: ExpressJsIcon,
+    whiteBg: true
   },
   {
     name: "PHP",
-    svg: ReactIcon
+    svg: PhpIcon
   },
   {
     name: "MySQL",
-    svg: ReactIcon
+    svg: MySqlIcon
   },
   {
     name: "PostgreSQL",
-    svg: ReactIcon
+    svg: PostgreSqlIcon
   },
   {
     name: "Mongo DB",
-    svg: ReactIcon
+    svg: MongoDbIcon
   },
   {
-    name: "API Design",
-    svg: ReactIcon
+    name: "Postman",
+    svg: PostmanIcon,
+  },
+  
+  {
+    name: "Swagger Docs",
+    svg: SwaggerIcon
   },
   {
-    name: "API Documentation",
-    svg: ReactIcon
-  }
+    name: "Stoplight Studio",
+    svg: StoplightIcon,
+    whiteBg: true
+  },
 ];
  
 export default backendSkills;

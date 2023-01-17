@@ -9,7 +9,7 @@ export default function ContactSection() {
     <StyledSection className="  ">
       <div
         id="contact"
-        className=" pt-12 sm:pt-[10rem] pb-12 sm:pb-[10rem] flex  gap-x-5 gap-y-5 "
+        className=" pt-12 sm:pt-[10rem] pb-12 sm:pb-[10rem] flex  gap-x-10 gap-y-5 "
       >
         <div className=" w-full ">
           <h4 className=" font-bold mb-3 ">LET'S DISCUSS YOUR PROJECT</h4>
