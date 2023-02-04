@@ -34,7 +34,7 @@ export default function TestimonialSection() {
               <button
                 type="button"
                 onClick={onClickHandler}
-                title={label}
+                title={"previous"}
                 className=" rounded-full h-12 aspect-square bg-deep-blue-700 hover:bg-gray-700 hover:shadow-round-sm hover:shadow-gray-700 absolute top-[50%] z-20 left-0 sm:left-4 grid place-items-center transition-all duration-300 "
               >
                 <FaArrowLeft size={16} className="  " />
@@ -46,7 +46,7 @@ export default function TestimonialSection() {
               <button
                 type="button"
                 onClick={onClickHandler}
-                title={label}
+                title={"next"}
                 className=" rounded-full h-12 aspect-square bg-deep-blue-700 hover:bg-gray-700 hover:shadow-round-sm hover:shadow-gray-700 absolute top-[50%] z-20 right-0 sm:right-4 grid place-items-center transition-all duration-300 "
               >
                 <FaArrowRight size={16} className="  " />
