@@ -8,46 +8,75 @@ import PostmanIcon from "../../assets/svg/skills/backend/postman.svg";
 import SwaggerIcon from "../../assets/svg/skills/backend/swagger.svg";
 import StoplightIcon from "../../assets/svg/skills/backend/stoplight.svg";
 
+const NodeJS = {
+  name: "Node JS",
+  svg: NodeJsIcon,
+};
+
+const ExpressJS = {
+  name: "Express JS",
+  svg: ExpressJsIcon,
+  whiteBg: true,
+};
+
+const PHP = {
+  name: "PHP",
+  svg: PhpIcon,
+};
+
+const MySQL = {
+  name: "MySQL",
+  svg: MySqlIcon,
+};
+
+const PostgreSQL = {
+  name: "PostgreSQL",
+  svg: PostgreSqlIcon,
+};
+
+const MongoDB = {
+  name: "Mongo DB",
+  svg: MongoDbIcon,
+};
+
+const Postman = {
+  name: "Postman",
+  svg: PostmanIcon,
+};
+
+const SwaggerDocs = {
+  name: "Swagger Docs",
+  svg: SwaggerIcon,
+};
+
+const StoplightStudio = {
+  name: "Stoplight Studio",
+  svg: StoplightIcon,
+  whiteBg: true,
+};
+
 const backendSkills = [
-  {
-    name: "Node JS",
-    svg: NodeJsIcon
-  },
-  {
-    name: "Express JS",
-    svg: ExpressJsIcon,
-    whiteBg: true
-  },
-  {
-    name: "PHP",
-    svg: PhpIcon
-  },
-  {
-    name: "MySQL",
-    svg: MySqlIcon
-  },
-  {
-    name: "PostgreSQL",
-    svg: PostgreSqlIcon
-  },
-  {
-    name: "Mongo DB",
-    svg: MongoDbIcon
-  },
-  {
-    name: "Postman",
-    svg: PostmanIcon,
-  },
-  
-  {
-    name: "Swagger Docs",
-    svg: SwaggerIcon
-  },
-  {
-    name: "Stoplight Studio",
-    svg: StoplightIcon,
-    whiteBg: true
-  },
+  NodeJS,
+  ExpressJS,
+  PHP,
+  MySQL,
+  PostgreSQL,
+  MongoDB,
+  Postman,
+  SwaggerDocs,
+  StoplightStudio,
 ];
- 
+
 export default backendSkills;
+
+export {
+  NodeJS,
+  ExpressJS,
+  PHP,
+  MySQL,
+  PostgreSQL,
+  MongoDB,
+  Postman,
+  SwaggerDocs,
+  StoplightStudio,
+};
