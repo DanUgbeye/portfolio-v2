@@ -9,7 +9,7 @@ export default function Navbar() {
   const { navExpanded, openNav, closeNav } = useNav();
 
   return (
-    <StyledSection className=" sticky top-0 right-0 left-0 shadow-sm shadow-gray-400/10 z-30 bg-deep-blue-900 mb-8 md:mb-2 ">
+    <StyledSection className=" sticky top-0 right-0 left-0 shadow-sm shadow-gray-400/10 z-[1000] bg-deep-blue-900 mb-8 md:mb-2 ">
       <div className=" flex items-center py-2 h-20 md:h-28 ">
         <h3 className=" text-lg md:text-2xl flex gap-x-1  ">
           <span className=" font-bold ">Daniel</span>

@@ -6,7 +6,7 @@ import ProjectList from "./ProjectList.component";
 export default function PortfolioSection() {
   return (
     <StyledSection className="  ">
-      <div id="projects" className=" mt-[3rem] sm:mt-[8.5rem] -mb-[13rem] ">
+      <div id="projects" className=" mt-[3rem] sm:mt-[8.5rem] ">
         <h4 className=" font-bold mb-3 ">PORTFOLIO SHOWCASE</h4>
 
         <p className=" text-sm mb-5 font-normal max-w-lg ">

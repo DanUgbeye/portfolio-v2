@@ -7,7 +7,7 @@ export interface StackButtonProps
       filterActive?: boolean
     }
 
-export default function StackButton(props: StackButtonProps) {
+export default function StackFilterButton(props: StackButtonProps) {
   return (
     <button
       className={` ${

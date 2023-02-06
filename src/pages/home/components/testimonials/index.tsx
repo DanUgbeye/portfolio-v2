@@ -3,13 +3,13 @@ import StyledSection from "../../../../components/StyledSection.component";
 import testimonials from "../../../../data/testimonials/testimonials.data";
 import Testimonial from "./Testimonial.component";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function TestimonialSection() {
   return (
     <StyledSection className=" bg-deep-blue-900 ">
-      <div className=" pt-[18rem] sm:pt-[20rem] pb-[4rem] sm:pb-[8.5rem] relative ">
+      <div className=" pt-[10rem] sm:pt-[15rem] pb-[4rem] sm:pb-[8.5rem] relative ">
         <h4 className=" font-bold mb-3 ">TESTIMONIALS</h4>
 
         <p className=" text-sm font-normal max-w-lg mb-2 ">
@@ -34,7 +34,7 @@ export default function TestimonialSection() {
               <button
                 type="button"
                 onClick={onClickHandler}
-                title={label}
+                title={"previous"}
                 className=" rounded-full h-12 aspect-square bg-deep-blue-700 hover:bg-gray-700 hover:shadow-round-sm hover:shadow-gray-700 absolute top-[50%] z-20 left-0 sm:left-4 grid place-items-center transition-all duration-300 "
               >
                 <FaArrowLeft size={16} className="  " />
@@ -46,7 +46,7 @@ export default function TestimonialSection() {
               <button
                 type="button"
                 onClick={onClickHandler}
-                title={label}
+                title={"next"}
                 className=" rounded-full h-12 aspect-square bg-deep-blue-700 hover:bg-gray-700 hover:shadow-round-sm hover:shadow-gray-700 absolute top-[50%] z-20 right-0 sm:right-4 grid place-items-center transition-all duration-300 "
               >
                 <FaArrowRight size={16} className="  " />
