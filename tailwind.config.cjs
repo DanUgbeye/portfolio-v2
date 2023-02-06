@@ -12,8 +12,8 @@ module.exports = {
       colors: {
         "deep-blue-900": "#1C232E",
         "deep-blue-700": "#222A36",
-        "violet-light": "#676CDB",
-        "violet-dark": "#6C71E5",
+        "violet-light": "#6C71E5",
+        "violet-dark": "#676CDB",
         "off-white": "#7F848B",
         "border-gray": "#898989",
         "footer": "#080F1A"
