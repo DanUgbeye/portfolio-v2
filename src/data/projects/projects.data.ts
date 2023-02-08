@@ -1,27 +1,24 @@
 import {
+  React,
+  TailwindCSS,
+  Javascript,
+  Firebase,
+  Typescript,
   ExpressJS,
   MongoDB,
   NodeJS,
   PostgreSQL,
   Postman,
   SwaggerDocs,
-} from "../skills/backendSkills.data";
+} from "../skills/skills.data";
 
-import {
-  React,
-  TailwindCSS,
-  Javascript,
-  Firebase,
-  Typescript,
-} from "../skills/frontendSkills.data";
-
-import ProjectImage from "../../assets/svg/projects/project-image-iphone.svg"
+import ProjectImage from "../../assets/svg/projects/project-image-iphone.svg";
 
 const projects = [
   {
     type: ["frontend", "fullstack"],
     name: "Auto Mart client",
-    description: "A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project",
+    description: "A little description about my very interesting project",
     image: ProjectImage,
     liveSite: "https://auto-mart-client.netlify.app",
     isPublic: true,
