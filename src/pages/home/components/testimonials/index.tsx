@@ -9,7 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 export default function TestimonialSection() {
   return (
     <StyledSection className=" bg-deep-blue-900 ">
-      <div className=" pt-[10rem] sm:pt-[15rem] pb-[4rem] sm:pb-[8.5rem] relative ">
+      <div className=" pt-[13rem] sm:pt-[18rem] pb-[4rem] sm:pb-[8.5rem] relative ">
         <h4 className=" font-bold mb-3 ">TESTIMONIALS</h4>
 
         <p className=" text-sm font-normal max-w-lg mb-2 ">
