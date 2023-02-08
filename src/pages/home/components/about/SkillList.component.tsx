@@ -1,14 +1,9 @@
 import React from "react";
+import Skill from "./Skill.component";
+import { SkillType } from "../../../../../app.interface";
 
 // data import
 import Skills from "../../../../data/skills/skills.data";
-import { Skill as SkillInterface } from "../../../../../app.interface";
-import Skill from "./Skill.component";
-
-export interface SkillType {
-  name: string;
-  skills: SkillInterface[];
-}
 
 export default function SkillList() {
   const allSkills = React.useMemo<SkillType[]>(
