@@ -10,8 +10,12 @@ interface ProjectProps extends Project {
 export default function ProjectCard(props: ProjectProps) {
   const { filter } = useProjectFilter();
 
-  return filter === "all" || props.type.includes(filter) ? (
-    <div className={` ${props.className || ""} border border-gray-700 bg-deep-blue-700 shadow-round-lg shadow-black/50 rounded-2xl overflow-hidden hover:bg-violet-light hover:scale-[1.01] transition-all duration-300  `}>
+  return (
+    <div
+      className={` ${
+        props.className || ""
+      } border border-gray-700 bg-deep-blue-700 shadow-round-lg shadow-black/50 rounded-2xl overflow-hidden hover:bg-violet-light hover:scale-[1.01] transition-all duration-300  `}
+    >
       <div
         className={` object-fill min-h-full min-w-full w-full overflow-hidden max-h-[15rem] sm:min-h-[full] `}
       >
@@ -70,5 +74,5 @@ export default function ProjectCard(props: ProjectProps) {
         </div>
       </div>
     </div>
-  ) : null;
+  );
 }
