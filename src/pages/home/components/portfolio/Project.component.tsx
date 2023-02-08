@@ -1,27 +1,36 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { Project as ProjectData, Skill } from "../../../../../app.interface";
+import { Project, Skill } from "../../../../../app.interface";
+import useProjectFilter from "../../../../hooks/useProjects.hook";
 
-interface ProjectComponent extends ProjectData {
-  className: string;
+interface ProjectProps extends Project {
+  className?: string;
 }
 
-export default function Project(props: ProjectComponent) {
-  return (
-    <div className=" mb-6 border border-gray-700 bg-deep-blue-700 shadow-round-lg shadow-black/50 rounded-2xl flex flex-col overflow-hidden hover:bg-violet-light hover:scale-[1.01] transition-all duration-300 sm:flex-row ">
-      <div className={` order-1 object-fill min-h-full w-full overflow-hidden max-h-[15rem] sm:max-h-[unset] `}>
+export default function ProjectCard(props: ProjectProps) {
+  const { filter } = useProjectFilter();
+
+  return filter === "all" || props.type.includes(filter) ? (
+    <div className={` ${props.className || ""} border border-gray-700 bg-deep-blue-700 shadow-round-lg shadow-black/50 rounded-2xl overflow-hidden hover:bg-violet-light hover:scale-[1.01] transition-all duration-300  `}>
+      <div
+        className={` object-fill min-h-full min-w-full w-full overflow-hidden max-h-[15rem] sm:min-h-[full] `}
+      >
         <img
           src={props.image}
           alt={props.name + " image"}
           className={` ${
             props.className && props.className
-          }  sm:object-cover w-full min-h-full `}
+          }  object-cover min-w-full min-h-full `}
         />
       </div>
-      <div className={` order-2 min-h-full w-full p-4 sm:p-6 text-xs sm:text-sm flex flex-col justify-evenly gap-y-4  `}>
+      <div
+        className={` min-h-full w-full h-[50%] p-4 sm:p-6 text-xs sm:text-sm flex flex-col justify-evenly gap-y-4  `}
+      >
         <h4 className=" font-bold text-lg sm:text-xl ">{props.name}</h4>
 
-        <p className=" text-ellipsis break-words overflow-hidden max-h-[5rem] ">{props.description}</p>
+        <p className=" text-ellipsis break-words overflow-hidden max-h-[5rem] ">
+          {props.description}
+        </p>
 
         <div className=" flex gap-x-3 gap-y-3 items-center sm:items-start sm:flex-col flex-wrap ">
           <div className=" font-bold min-w-fit ">Languages Used </div>
@@ -41,19 +50,25 @@ export default function Project(props: ProjectComponent) {
         </div>
 
         <div className=" mb-6 sm:mb-0 justify-self-end flex gap-4 justify-between  ">
-          <button className=" flex gap-x-2 px-1 text-sm items-center rounded-lg h-10 font-bold transition-all duration-300 group ">
+          <a
+            href={props.github}
+            className=" flex gap-x-2 px-1 text-sm items-center rounded-lg h-10 font-bold transition-all duration-300 group "
+          >
             <span className=" min-w-fit ">GitHub Repo</span>
             <FaArrowRight
               size={16}
               className=" group-hover:translate-x-[2px] transition-all duration-300 "
             />
-          </button>
+          </a>
 
-          <button className=" flex gap-x-1 w-[7rem] justify-center text-sm items-center rounded-lg h-10 bg-white text-black hover:tracking-wide transition-all duration-300 ">
+          <a
+            href={props.liveSite}
+            className=" flex gap-x-1 w-[7rem] justify-center text-sm items-center rounded-lg h-10 bg-white text-black hover:tracking-wide transition-all duration-300 "
+          >
             <span className="  ">View Live Site</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>
-  );
+  ) : null;
 }

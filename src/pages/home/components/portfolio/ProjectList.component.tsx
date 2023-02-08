@@ -22,11 +22,11 @@ export default function ProjectList() {
     <div
       className={` ${
         filteredProjects.length > 0 && " -mb-[8rem] z-[20] "
-      } rounded-xl `}
+      } rounded-xl flex flex-col gap-y-12 `}
     >
       {filteredProjects.length > 0 ? (
         arrangedProjects.map((project, index) => (
-          <ProjectGrid key={index} projects={project} />
+          <ProjectGrid key={index} order={index + 1} projects={project} />
         ))
       ) : (
         <div className=" rounded-lg border border-gray-500 h-[10rem] mb-6 grid place-items-center text-gray-400 ">
