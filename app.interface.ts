@@ -12,6 +12,11 @@ export interface Skill {
   whiteBg?: boolean;
 }
 
+export interface SkillType {
+  name: string;
+  skills: Skill[];
+}
+
 export interface Project {
   type: string[];
   name: string;
