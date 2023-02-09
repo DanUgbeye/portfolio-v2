@@ -19,10 +19,6 @@ export default function ContactSection() {
             nam imperdiet maecenas vivamus.
           </p>
 
-          <p className=" text-sm font-bold max-w-lg mb-3 ">
-            I am interested in
-          </p>
-
           <ContactForm />
         </div>
 
