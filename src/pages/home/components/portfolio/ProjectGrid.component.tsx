@@ -32,7 +32,7 @@ export default function ProjectGrid(props: ProjectGridProps) {
 
       {props.projects[2] && (
         <ProjectCard
-          className=" col-span-full grid grid-cols-1 md:grid-cols-[45%_auto] lg:grid-cols-2 lg:h-[20rem] max-w-md md:max-w-none h-full w-full "
+          className=" col-span-full grid grid-cols-1 md:grid-cols-[45%_auto] lg:grid-cols-2 lg:h-[23rem] max-w-md md:max-w-none h-full w-full "
           {...props.projects[2]}
         />
       )}

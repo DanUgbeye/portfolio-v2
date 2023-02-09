@@ -37,7 +37,7 @@ export default function ProjectCard(props: ProjectProps) {
         </p>
 
         <div className=" flex gap-x-3 gap-y-3 items-center sm:items-start sm:flex-col flex-wrap ">
-          <div className=" font-bold min-w-fit ">Languages Used </div>
+          <div className=" font-bold min-w-fit ">Technologies </div>
 
           <div className=" flex gap-4 flex-wrap items-center ">
             {props.stack.map((stack: Skill, index) => (
@@ -53,7 +53,7 @@ export default function ProjectCard(props: ProjectProps) {
           </div>
         </div>
 
-        <div className=" mb-6 sm:mb-0 justify-self-end flex gap-4 justify-between  ">
+        <div className=" mb-4 justify-self-end flex gap-4 justify-between  ">
           <a
             href={props.github}
             className=" flex gap-x-2 px-1 text-sm items-center rounded-lg h-10 font-bold transition-all duration-300 group "
@@ -61,13 +61,13 @@ export default function ProjectCard(props: ProjectProps) {
             <span className=" min-w-fit ">GitHub Repo</span>
             <FaArrowRight
               size={16}
-              className=" group-hover:translate-x-[2px] transition-all duration-300 "
+              className=" group-hover:translate-x-1 transition-all duration-300 "
             />
           </a>
 
           <a
             href={props.liveSite}
-            className=" flex gap-x-1 w-[7rem] justify-center text-sm items-center rounded-lg h-10 bg-white text-black hover:tracking-wide transition-all duration-300 "
+            className=" flex gap-x-1 w-[7rem] justify-center text-sm items-center rounded-lg h-10 bg-white text-black hover:tracking-wider transition-all duration-300 "
           >
             <span className="  ">View Live Site</span>
           </a>
