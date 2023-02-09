@@ -12,7 +12,7 @@ export interface ServiceProps {
 
 export default function Service(props: ServiceProps) {
   return (
-    <div className=" bg-deep-blue-700 hover:bg-violet-light px-6 md:px-9 py-8 md:py-12 rounded-lg md:rounded-none shadow-round-lg shadow-black/20 flex flex-col gap-y-6 transition-all duration-200 w-full max-w-sm mx-auto group hover:scale-105 ">
+    <div className=" bg-deep-blue-700 hover:bg-violet-light px-6 md:px-6 pt-8 md:pt-12 pb-12 md:pb-16 rounded-lg md:rounded-none shadow-round-lg shadow-black/20 flex flex-col gap-y-6 transition-all duration-300 w-full max-w-sm mx-auto group hover:scale-[1.01] ">
       <props.svg
         height={64}
         width={64}
