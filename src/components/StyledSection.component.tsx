@@ -8,7 +8,7 @@ export interface StyledSectionProps
 export default function StyledSection(props: StyledSectionProps) {
   return (
     <section className={` ${props.className}`}>
-      <div className="  px-4 sm:px-[5%] xl:px-[8rem] max-w-[100rem] mx-auto ">
+      <div className="  px-4 sm:px-[5%] xl:px-[6rem] max-w-[100rem] mx-auto ">
         {props.children}
       </div>
     </section>

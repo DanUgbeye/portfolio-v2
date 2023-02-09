@@ -30,14 +30,14 @@ export default function ContactForm() {
           }
 
           if (!values.name) {
-            errors.name = "required";
+            errors.name = "name is required";
           }
 
           if (values.message.length > 1024) {
             errors.message = "message should be 1024 characters max";
           }
           if (!values.message) {
-            errors.message = "required";
+            errors.message = "message is required";
           }
           return errors;
         }}
@@ -50,91 +50,102 @@ export default function ContactForm() {
         }}
       >
         {({ isSubmitting, touched, errors }) => (
-          <Form className=" flex flex-col gap-y-5 text-sm ">
-            <fieldset className=" flex flex-wrap gap-x-5 gap-y-5 ">
-              <InterestButton
-                active={interest === "frontend"}
-                onClick={() => {
-                  if (interest === "frontend") {
-                    setInterest("");
-                    return;
-                  }
-                  setInterest("frontend");
-                }}
-              >
-                <span className="  ">Frontend</span>
-                <span className=" hidden ">Web Development</span>
-              </InterestButton>
+          <Form className=" flex flex-col gap-y-8 text-sm max-w-lg ">
+            <fieldset className=" my-4 flex flex-col  ">
+              <p className=" text-sm font-bold mb-3 ">
+                I am interested in
+              </p>
+              
+              <div className=" grid grid-cols-[repeat(auto-fit,_minmax(11.5rem,_1fr))] gap-x-4 gap-y-5 ">
+                <InterestButton
+                  active={interest === "frontend"}
+                  onClick={() => {
+                    if (interest === "frontend") {
+                      setInterest("");
+                      return;
+                    }
+                    setInterest("frontend");
+                  }}
+                >
+                  <span className="  ">Frontend</span>
+                  <span className=" ml-1 ">Web Development</span>
+                </InterestButton>
 
-              <InterestButton
-                active={interest === "backend"}
-                onClick={() => {
-                  if (interest === "backend") {
-                    setInterest("");
-                    return;
-                  }
-                  setInterest("backend");
-                }}
-              >
-                <span className="  ">Backend</span>
-                <span className=" hidden ">Web Development</span>
-              </InterestButton>
+                <InterestButton
+                  active={interest === "backend"}
+                  onClick={() => {
+                    if (interest === "backend") {
+                      setInterest("");
+                      return;
+                    }
+                    setInterest("backend");
+                  }}
+                >
+                  <span className="  ">Backend</span>
+                  <span className=" ml-1 ">Web Development</span>
+                </InterestButton>
 
-              <InterestButton
-                active={interest === "fullstack"}
-                onClick={() => {
-                  if (interest === "fullstack") {
-                    setInterest("");
-                    return;
-                  }
-                  setInterest("fullstack");
-                }}
-              >
-                <span className="  ">Full Stack</span>
-                <span className=" hidden ">Web Development</span>
-              </InterestButton>
+                <InterestButton
+                  active={interest === "fullstack"}
+                  onClick={() => {
+                    if (interest === "fullstack") {
+                      setInterest("");
+                      return;
+                    }
+                    setInterest("fullstack");
+                  }}
+                >
+                  <span className="  ">Full Stack</span>
+                  <span className=" ml-1 ">Web Development</span>
+                </InterestButton>
 
-              <InterestButton
-                active={interest === "iot"}
-                onClick={() => {
-                  if (interest === "iot") {
-                    setInterest("");
-                    return;
-                  }
-                  setInterest("iot");
-                }}
-              >
-                <span className="  ">IOT</span>
-                <span className=" hidden "> & Embedded Systems Prog.</span>
-              </InterestButton>
+                <InterestButton
+                  active={interest === "iot"}
+                  onClick={() => {
+                    if (interest === "iot") {
+                      setInterest("");
+                      return;
+                    }
+                    setInterest("iot");
+                  }}
+                >
+                  <span className="  ">IOT</span>
+                  <span className=" ml-1 ">Systems Development</span>
+                </InterestButton>
 
-              <InterestButton
-                active={interest === "other"}
-                onClick={() => {
-                  if (interest === "other") {
-                    setInterest("");
-                    return;
-                  }
-                  setInterest("other");
-                }}
-              >
-                Other
-              </InterestButton>
+                <InterestButton
+                  active={interest === "other"}
+                  onClick={() => {
+                    if (interest === "other") {
+                      setInterest("");
+                      return;
+                    }
+                    setInterest("other");
+                  }}
+                >
+                  Others
+                </InterestButton>
+              </div>
             </fieldset>
 
-            <fieldset className=" flex flex-col gap-y-1 ">
-              <label htmlFor="name" className=" block ">
-                Name
-              </label>
+            <fieldset className=" flex flex-col relative ">
               <Field
                 id="name"
                 className={
-                  " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 "
+                  " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer "
                 }
                 type="text"
                 name="name"
-                placeholder="Enter your Name"
+                placeholder="Name"
               />
+
+              <label
+                htmlFor="name"
+                className=" absolute -top-2.5 text-border-gray bg-deep-blue-700 px-1 rounded-md ml-4 peer-placeholder-shown:top-3.5 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-gray-500 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:bg-deep-blue-700 peer-focus:px-1 peer-focus:text-border-gray transition-all duration-300 pointer-events-none "
+              >
+                Name
+              </label>
+
               <ErrorMessage
                 className={` ${
                   touched.name && errors.name ? "visible" : "invisible"
@@ -144,19 +155,23 @@ export default function ContactForm() {
               />
             </fieldset>
 
-            <fieldset className=" flex flex-col gap-y-1 ">
-              <label htmlFor="email" className=" block ">
-                Email
-              </label>
+            <fieldset className=" flex flex-col relative ">
               <Field
                 id="email"
                 className={
-                  " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 "
+                  " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer "
                 }
                 type="email"
                 name="email"
-                placeholder="Enter your Email"
+                placeholder="Email"
               />
+
+              <label
+                htmlFor="email"
+                className=" absolute -top-2.5 text-border-gray bg-deep-blue-700 px-1 rounded-md ml-4 peer-placeholder-shown:top-3.5 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-gray-500 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:bg-deep-blue-700 peer-focus:px-1 peer-focus:text-border-gray transition-all duration-300 pointer-events-none "
+              >
+                Email
+              </label>
               <ErrorMessage
                 className={` ${
                   touched.email && errors.email ? "visible" : "invisible"
@@ -167,14 +182,14 @@ export default function ContactForm() {
             </fieldset>
 
             <CustomTextArea
-              rows={8}
+              rows={5}
               name="message"
-              placeholder="Enter your Message"
+              placeholder="Message"
               label="Message"
             />
 
             <button
-              className=" h-10 bg-violet-light disabled:bg-violet-dark/50 disabled:text-violet-light px-4 rounded-lg w-fit text-lg "
+              className=" h-12 bg-violet-light hover:bg-violet-dark/90 disabled:bg-violet-dark/50 disabled:text-violet-light px-4 rounded-lg w-full max-w-lg text-lg transition-all duration-300 "
               type="submit"
               disabled={isSubmitting}
             >

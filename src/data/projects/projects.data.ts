@@ -12,14 +12,18 @@ import {
   SwaggerDocs,
 } from "../skills/skills.data";
 
-import ProjectImage from "../../assets/svg/projects/project-image-iphone.svg";
+import ProjectImagePhone from "../../assets/svg/projects/project-image-iphone.svg";
+import ProjectImageLaptop from "../../assets/svg/projects/project-image-laptop.svg";
+import ProjectImageHeadphones from "../../assets/svg/projects/project-image-headphones.svg";
+import ProjectImageCodeblack from "../../assets/svg/projects/project-image-codeblack.svg";
+import ProjectImageCodegreen from "../../assets/svg/projects/project-image-codegreen.svg";
 
 const projects = [
   {
     type: ["frontend", "fullstack"],
     name: "Auto Mart client",
     description: "A little description about my very interesting project",
-    image: ProjectImage,
+    image: ProjectImageLaptop,
     liveSite: "https://auto-mart-client.netlify.app",
     isPublic: true,
     github: "https://github.com/danugbeye",
@@ -28,8 +32,8 @@ const projects = [
   {
     type: ["backend", "fullstack"],
     name: "Auto Mart API",
-    description: "A little description about my very interesting project",
-    image: ProjectImage,
+    description: "A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project A little description about my very interesting project",
+    image: ProjectImageCodeblack,
     liveSite: "https://auto-mart-client.netlify.app",
     isPublic: true,
     github: "https://github.com/danugbeye",
@@ -39,7 +43,7 @@ const projects = [
     type: ["backend"],
     name: "Author hive",
     description: "A little description about my very interesting project",
-    image: ProjectImage,
+    image: ProjectImagePhone,
     liveSite: "https://auto-mart-client.netlify.app",
     isPublic: true,
     github: "https://github.com/danugbeye",
@@ -49,7 +53,7 @@ const projects = [
     type: ["frontend", "fullstack"],
     name: "Kode class",
     description: "A little description about my very interesting project",
-    image: ProjectImage,
+    image: ProjectImageCodegreen,
     liveSite: "https://auto-mart-client.netlify.app",
     isPublic: true,
     github: "https://github.com/danugbeye",
@@ -59,7 +63,7 @@ const projects = [
     type: ["frontend"],
     name: "My Portfolio",
     description: "A little description about my very interesting project",
-    image: ProjectImage,
+    image: ProjectImageHeadphones,
     liveSite: "https://auto-mart-client.netlify.app",
     isPublic: true,
     github: "https://github.com/danugbeye",
@@ -69,7 +73,7 @@ const projects = [
     type: ["backend"],
     name: "Synque API",
     description: "A little description about my very interesting project",
-    image: ProjectImage,
+    image: ProjectImagePhone,
     liveSite: "https://auto-mart-client.netlify.app",
     isPublic: true,
     github: "https://github.com/danugbeye",
