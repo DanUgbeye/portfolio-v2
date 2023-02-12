@@ -24,7 +24,7 @@ export default function IntroText() {
           onClick={() => {
             anchorNavigate("/#contact");
           }}
-          className=" bg-violet-dark hover:bg-violet-light/70 h-12 rounded-lg px-3 w-fit transition-all duration-200 "
+          className=" bg-violet-light hover:bg-violet-dark h-12 w-[6rem] rounded-lg transition-all duration-500 tracking-wide hover:tracking-wider outline outline-1 outline-transparent hover:outline-violet-dark border-2 border-deep-blue-700 "
         >
           Let's Talk
         </button>

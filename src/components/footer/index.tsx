@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
       </StyledSection>
       <StyledSection className=" bg-deep-blue-700  ">
-        <div className=" flex w-full justify-center tracking-wider text-sm text-gray-300 py-2 ">
+        <div className=" flex w-full justify-center tracking-wider text-xs text-gray-300 py-4 ">
           <span className="  ">Made with 💜 by</span>
           <a
             target={"_blank"}

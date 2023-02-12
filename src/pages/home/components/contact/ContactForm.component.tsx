@@ -50,7 +50,7 @@ export default function ContactForm() {
         }}
       >
         {({ isSubmitting, touched, errors }) => (
-          <Form className=" flex flex-col gap-y-8 text-sm max-w-lg ">
+          <Form className=" flex flex-col gap-y-8 text-sm w-full ">
             <fieldset className=" my-4 flex flex-col  ">
               <p className=" text-sm font-bold mb-3 ">
                 I am interested in
@@ -95,8 +95,8 @@ export default function ContactForm() {
                     setInterest("fullstack");
                   }}
                 >
-                  <span className="  ">Full Stack</span>
-                  <span className=" ml-1 ">Web Development</span>
+                  <span className="  ">Full&nbsp;Stack</span>
+                  <span className=" ml-1 ">Web&nbsp;Development</span>
                 </InterestButton>
 
                 <InterestButton
@@ -128,68 +128,70 @@ export default function ContactForm() {
               </div>
             </fieldset>
 
-            <fieldset className=" flex flex-col relative ">
-              <Field
-                id="name"
-                className={
-                  " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer "
-                }
-                type="text"
-                name="name"
-                placeholder="Name"
+            <div className=" grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-4 lg:grid-cols-1 ">
+              <fieldset className=" flex flex-col relative w-full ">
+                <Field
+                  id="name"
+                  className={
+                    " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer "
+                  }
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                />
+
+                <label
+                  htmlFor="name"
+                  className=" absolute -top-2.5 text-border-gray bg-deep-blue-700 px-1 rounded-md ml-4 peer-placeholder-shown:top-3.5 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-gray-500 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:bg-deep-blue-700 peer-focus:px-1 peer-focus:text-border-gray transition-all duration-300 pointer-events-none "
+                >
+                  Name
+                </label>
+
+                <ErrorMessage
+                  className={` ${
+                    touched.name && errors.name ? "visible" : "invisible"
+                  } text-red-500 text-xsm ml-2 `}
+                  name="name"
+                  component="div"
+                />
+              </fieldset>
+
+              <fieldset className=" flex flex-col relative w-full ">
+                <Field
+                  id="email"
+                  className={
+                    " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer "
+                  }
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                />
+
+                <label
+                  htmlFor="email"
+                  className=" absolute -top-2.5 text-border-gray bg-deep-blue-700 px-1 rounded-md ml-4 peer-placeholder-shown:top-3.5 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-gray-500 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:bg-deep-blue-700 peer-focus:px-1 peer-focus:text-border-gray transition-all duration-300 pointer-events-none "
+                >
+                  Email
+                </label>
+                <ErrorMessage
+                  className={` ${
+                    touched.email && errors.email ? "visible" : "invisible"
+                  } text-red-500 text-xsm ml-2 `}
+                  name="email"
+                  component="div"
+                />
+              </fieldset>
+
+              <CustomTextArea
+                rows={5}
+                name="message"
+                placeholder="Message"
+                label="Message"
               />
-
-              <label
-                htmlFor="name"
-                className=" absolute -top-2.5 text-border-gray bg-deep-blue-700 px-1 rounded-md ml-4 peer-placeholder-shown:top-3.5 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-gray-500 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:bg-deep-blue-700 peer-focus:px-1 peer-focus:text-border-gray transition-all duration-300 pointer-events-none "
-              >
-                Name
-              </label>
-
-              <ErrorMessage
-                className={` ${
-                  touched.name && errors.name ? "visible" : "invisible"
-                } text-red-500 text-xsm ml-2 `}
-                name="name"
-                component="div"
-              />
-            </fieldset>
-
-            <fieldset className=" flex flex-col relative ">
-              <Field
-                id="email"
-                className={
-                  " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer "
-                }
-                type="email"
-                name="email"
-                placeholder="Email"
-              />
-
-              <label
-                htmlFor="email"
-                className=" absolute -top-2.5 text-border-gray bg-deep-blue-700 px-1 rounded-md ml-4 peer-placeholder-shown:top-3.5 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-gray-500 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:bg-deep-blue-700 peer-focus:px-1 peer-focus:text-border-gray transition-all duration-300 pointer-events-none "
-              >
-                Email
-              </label>
-              <ErrorMessage
-                className={` ${
-                  touched.email && errors.email ? "visible" : "invisible"
-                } text-red-500 text-xsm ml-2 `}
-                name="email"
-                component="div"
-              />
-            </fieldset>
-
-            <CustomTextArea
-              rows={5}
-              name="message"
-              placeholder="Message"
-              label="Message"
-            />
+            </div>
 
             <button
-              className=" h-12 bg-violet-light hover:bg-violet-dark/90 disabled:bg-violet-dark/50 disabled:text-violet-light px-4 rounded-lg w-full max-w-lg text-lg transition-all duration-300 "
+              className=" h-12 bg-violet-light hover:bg-violet-dark/90 disabled:bg-violet-dark/50 disabled:text-violet-light px-4 rounded-lg w-full max-w-sm lg:max-w-lg text-lg transition-all duration-300 tracking-wide hover:tracking-wider outline outline-1 outline-transparent mx-auto hover:outline-violet-dark focus:outline-violet-dark border-2 border-deep-blue-900 "
               type="submit"
               disabled={isSubmitting}
             >
