@@ -9,7 +9,7 @@ export interface TestimonialProps {
 
 export default function Testimonial(props: TestimonialProps) {
   return (
-    <div className=" bg-violet-light rounded-2xl max-w-md min-w-fulll md:min-w-[25rem] px-6 md:px-12 py-4 md:py-8 flex flex-col gap-y-8 h-fit my-12 mx-8 sm:mx-auto ">
+    <div className=" bg-violet-light rounded-2xl max-w-[80%] md:max-w-lg min-w-[80%] md:min-w-[30rem] px-6 md:px-12 py-4 md:py-8 flex flex-col gap-y-8 h-fit my-12 mx-auto ">
       <TextQuoteIcon
         width={"7rem"}
         title="text-quotes"

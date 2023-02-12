@@ -13,7 +13,7 @@ export default function AboutMe() {
         got certified as a Backend Developer Graduate at Top Universe.
       </p>
 
-      <button className=" grid rounded-lg bg-violet-dark place-items-center px-3 text-sm tracking-wide font-normal h-12 ">
+      <button className=" grid rounded-lg bg-violet-light hover:bg-violet-dark place-items-center w-[10rem] text-sm tracking-wide hover:tracking-wider font-normal h-12 transition-all duration-300 outline outline-1 outline-transparent hover:outline-violet-dark border-2 border-deep-blue-900 ">
         Download Resume
       </button>
     </div>
