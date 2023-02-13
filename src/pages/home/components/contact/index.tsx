@@ -4,7 +4,6 @@ import HelloImage from "../../../../assets/svg/hello-image.svg";
 import ContactForm from "./ContactForm.component";
 
 export default function ContactSection() {
-
   return (
     <StyledSection className="  ">
       <div
@@ -23,7 +22,11 @@ export default function ContactSection() {
         </div>
 
         <div className=" w-full hidden lg:flex ">
-          <img src={HelloImage} alt={"contact me"} className=" self-start " />
+          <img
+            src={HelloImage}
+            alt={"contact me"}
+            className=" self-start object-cover min-h-full rounded-xl "
+          />
         </div>
       </div>
     </StyledSection>
