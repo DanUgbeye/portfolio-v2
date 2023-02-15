@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, Variants } from "framer-motion";
 import { Project } from "../../../../../app.interface";
 import ProjectCard from "./Project.component";
 
@@ -7,9 +8,20 @@ export interface ProjectGridProps {
   projects: Project[];
 }
 
+const ProjectGridVariants: Variants = {
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.1,
+    },
+  },
+};
+
 export default function ProjectGrid(props: ProjectGridProps) {
   return (
-    <div
+    <motion.div
+      variants={ProjectGridVariants}
+      exit="exit"
       className={` grid ${
         props.order % 2 === 0
           ? "lg:grid-cols-[auto,_55%]"
@@ -36,6 +48,6 @@ export default function ProjectGrid(props: ProjectGridProps) {
           {...props.projects[2]}
         />
       )}
-    </div>
+    </motion.div>
   );
 }
