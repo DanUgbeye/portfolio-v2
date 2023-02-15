@@ -1,12 +1,15 @@
 import React from "react";
-import useProjectFilter from "../../../../hooks/useProjects.hook";
 import projects from "../../../../data/projects/projects.data";
 import splitProjects from "../../../../utils/splitArray.util";
 import ProjectGrid from "./ProjectGrid.component";
 import { AnimatePresence, motion } from "framer-motion";
+import { filter } from "../../../../../app.interface";
 
-export default function ProjectList() {
-  const { filter } = useProjectFilter();
+export interface ProjectFilterProps {
+  filter: filter;
+}
+
+export default function ProjectList({ filter }: ProjectFilterProps) {
 
   const filteredProjects = React.useMemo(() => {
     return filter === "all"
@@ -28,7 +31,11 @@ export default function ProjectList() {
       <AnimatePresence mode="sync">
         {filteredProjects.length > 0 ? (
           arrangedProjects.map((project, index) => (
-            <ProjectGrid key={Math.random()} order={index + 1} projects={project} />
+            <ProjectGrid
+              key={Math.random()}
+              order={index + 1}
+              projects={project}
+            />
           ))
         ) : (
           <div className=" rounded-lg border border-gray-500 h-[10rem] mb-6 grid place-items-center text-gray-400 ">

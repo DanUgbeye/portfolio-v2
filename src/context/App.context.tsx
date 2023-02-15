@@ -1,7 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { ToastContainer } from "react-toastify";
 import { useScrollLock } from "../hooks/useScrollLock.hook";
-import ProjectContextProvider from "./Projects.context";
 import "react-toastify/dist/ReactToastify.min.css";
 
 export interface AppContextProps {
@@ -66,7 +65,7 @@ export default function AppContextProvider(props: AppContextProviderProps) {
         newestOnTop={false}
         theme="colored"
       />
-      <ProjectContextProvider>{props.children}</ProjectContextProvider>
+      {props.children}
     </AppContext.Provider>
   );
 }

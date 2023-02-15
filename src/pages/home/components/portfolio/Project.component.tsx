@@ -2,7 +2,6 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import { Project, Skill } from "../../../../../app.interface";
-import useProjectFilter from "../../../../hooks/useProjects.hook";
 
 interface ProjectProps extends Project {
   className?: string;
@@ -29,8 +28,6 @@ const ProjectCardVariants: Variants = {
 };
 
 export default function ProjectCard(props: ProjectProps) {
-  const { filter } = useProjectFilter();
-
   return (
     <motion.div
       variants={ProjectCardVariants}
