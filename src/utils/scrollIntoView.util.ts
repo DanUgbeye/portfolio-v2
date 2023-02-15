@@ -27,12 +27,12 @@ export default function scrollIntoView(hash?: string, options?: scrollOptions) {
 }
 
 type hashBreakpoints = {
-  sm?: number,
-  md?: number,
-  xl?: number
-}
+  sm?: number;
+  md?: number;
+  xl?: number;
+};
 
-const hashes: { [key: string]: hashBreakpoints; } = {
+const hashes: { [key: string]: hashBreakpoints } = {
   about: {
     sm: 120,
     md: 150,
@@ -46,7 +46,7 @@ const hashes: { [key: string]: hashBreakpoints; } = {
   },
 
   services: {
-    sm: 150,
+    sm: 170,
     xl: 224,
   },
 
