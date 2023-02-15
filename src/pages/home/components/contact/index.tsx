@@ -23,6 +23,7 @@ export default function ContactSection() {
 
         <div className=" w-full hidden lg:flex ">
           <img
+            loading="lazy"
             src={HelloImage}
             alt={"contact me"}
             className=" self-start object-cover min-h-full rounded-xl "

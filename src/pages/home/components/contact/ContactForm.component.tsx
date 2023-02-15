@@ -133,7 +133,7 @@ export default function ContactForm() {
                 <Field
                   id="name"
                   className={
-                    " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer "
+                    " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer hover:border-white "
                   }
                   type="text"
                   name="name"
@@ -160,7 +160,7 @@ export default function ContactForm() {
                 <Field
                   id="email"
                   className={
-                    " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer "
+                    " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer hover:border-white "
                   }
                   type="email"
                   name="email"
