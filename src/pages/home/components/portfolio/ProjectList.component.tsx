@@ -10,7 +10,6 @@ export interface ProjectFilterProps {
 }
 
 export default function ProjectList({ filter }: ProjectFilterProps) {
-
   const filteredProjects = React.useMemo(() => {
     return filter === "all"
       ? projects

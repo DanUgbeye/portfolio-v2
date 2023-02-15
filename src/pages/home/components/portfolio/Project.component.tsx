@@ -12,8 +12,8 @@ const ProjectCardVariants: Variants = {
     opacity: 0,
     scale: 0.7,
     transition: {
-      duration: 0.1
-    }
+      duration: 0.1,
+    },
   },
 
   inView: {
@@ -24,7 +24,7 @@ const ProjectCardVariants: Variants = {
       type: "keyframes",
       ease: "linear",
     },
-  }
+  },
 };
 
 export default function ProjectCard(props: ProjectProps) {

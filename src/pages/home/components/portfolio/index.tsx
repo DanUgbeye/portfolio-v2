@@ -5,7 +5,7 @@ import ProjectFilter from "./ProjectFilter.component";
 import ProjectList from "./ProjectList.component";
 
 export default function PortfolioSection() {
-  const [filter, setFilter] = React.useState<filter>("all")
+  const [filter, setFilter] = React.useState<filter>("all");
   return (
     <StyledSection className="  ">
       <div id="projects" className=" mt-[3rem] sm:mt-[8.5rem] ">
@@ -18,7 +18,7 @@ export default function PortfolioSection() {
 
         <div className=" flex flex-col gap-y-9 relative ">
           <ProjectFilter filter={filter} setFilter={setFilter} />
-          <ProjectList filter={filter}  />
+          <ProjectList filter={filter} />
         </div>
       </div>
     </StyledSection>
