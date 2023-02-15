@@ -6,7 +6,7 @@ import Service from "./Service.component";
 export default function ServicesSection() {
   return (
     <StyledSection className=" -mt-[14rem] ">
-      <div className=" w-full ">
+      <div className=" w-full mb-10 ">
         <h4 className=" font-bold mb-3 text-center ">MY SERVICES</h4>
       </div>
 
