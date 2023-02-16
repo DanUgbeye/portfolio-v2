@@ -8,7 +8,7 @@ const HeroSectionVariants: Variants = {
   inView: {
     opacity: 1,
     transition: {
-      when: "beforeChildren"
+      when: "beforeChildren",
     },
   },
 
@@ -22,7 +22,7 @@ const HeroImageVariants: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      delay: 0.2
+      delay: 0.2,
     },
   },
 

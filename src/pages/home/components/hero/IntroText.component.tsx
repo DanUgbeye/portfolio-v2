@@ -8,7 +8,7 @@ const HeroTextVariants: Variants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.3,
-      when: "beforeChildren"
+      when: "beforeChildren",
     },
   },
 
@@ -24,7 +24,7 @@ const TextVariants: Variants = {
     transition: {
       type: "tween",
       ease: "easeOut",
-      duration: 0.5
+      duration: 0.5,
     },
   },
 
@@ -43,7 +43,6 @@ const linkVariants: Variants = {
       duration: 1,
     },
   },
-  
 };
 
 const slideInVariants: Variants = {
@@ -53,17 +52,15 @@ const slideInVariants: Variants = {
     transition: {
       delay: 1,
       type: "spring",
-      when: "beforeChildren"
+      when: "beforeChildren",
     },
   },
   hidden: {
     x: -100,
     opacity: 0,
-    transition: {
-      
-    },
+    transition: {},
   },
-}
+};
 
 export default function IntroText() {
   const anchorNavigate = useAnchorNavigate();
@@ -73,9 +70,7 @@ export default function IntroText() {
       variants={HeroTextVariants}
       className=" max-w-3xl text-sm flex flex-col relative mb-12 w-full "
     >
-      <motion.div
-        className=" flex flex-col gap-y-8 "
-      >
+      <motion.div className=" flex flex-col gap-y-8 ">
         <motion.h1
           variants={TextVariants}
           className=" text-3xl md:text-4xl font-bold text-white "
@@ -103,9 +98,14 @@ export default function IntroText() {
         </motion.div>
       </motion.div>
 
-      <motion.div variants={slideInVariants} className=" hidden md:flex flex-col md:flex-row gap-x-6 gap-y-6 md:items-center mt-16  ">
+      <motion.div
+        variants={slideInVariants}
+        className=" hidden md:flex flex-col md:flex-row gap-x-6 gap-y-6 md:items-center mt-16 "
+      >
         <div className=" font-bold my-auto md:self-start ">Check out my</div>
-        <motion.div transition={{staggerChildren: 0.4}} className=" flex gap-x-5 items-center md:self-start ">
+        <motion.div
+          className=" flex gap-x-5 items-center md:self-start "
+        >
           <motion.a
             variants={linkVariants}
             animate="visible"
@@ -123,7 +123,7 @@ export default function IntroText() {
           <motion.a
             variants={linkVariants}
             animate="visible"
-            transition={{delay: 0.4}}
+            transition={{ delay: 0.4 }}
             href={"https://github.com/danugbeye"}
             target={"_blank"}
             title="github"
@@ -138,7 +138,7 @@ export default function IntroText() {
           <motion.a
             variants={linkVariants}
             animate="visible"
-            transition={{delay: 0.8}}
+            transition={{ delay: 0.8 }}
             href={"https://twitter.com/Ugbeye_Daniel"}
             target={"_blank"}
             title="twitter"
