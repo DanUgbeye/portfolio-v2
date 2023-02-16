@@ -7,7 +7,8 @@ const HeroTextVariants: Variants = {
   inView: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.3,
+      when: "beforeChildren"
     },
   },
 
@@ -32,6 +33,37 @@ const TextVariants: Variants = {
     y: 20,
   },
 };
+
+const linkVariants: Variants = {
+  visible: {
+    y: [-2.5, 2.5],
+    transition: {
+      repeat: Infinity,
+      repeatType: "mirror",
+      duration: 1,
+    },
+  },
+  
+};
+
+const slideInVariants: Variants = {
+  inView: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 1,
+      type: "spring",
+      when: "beforeChildren"
+    },
+  },
+  hidden: {
+    x: -100,
+    opacity: 0,
+    transition: {
+      
+    },
+  },
+}
 
 export default function IntroText() {
   const anchorNavigate = useAnchorNavigate();
@@ -71,10 +103,12 @@ export default function IntroText() {
         </motion.div>
       </motion.div>
 
-      <motion.div variants={TextVariants} className=" hidden md:flex flex-col md:flex-row gap-x-6 gap-y-6 md:items-center mt-16  ">
+      <motion.div variants={slideInVariants} className=" hidden md:flex flex-col md:flex-row gap-x-6 gap-y-6 md:items-center mt-16  ">
         <div className=" font-bold my-auto md:self-start ">Check out my</div>
-        <div className=" flex gap-x-5 items-center md:self-start ">
-          <a
+        <motion.div transition={{staggerChildren: 0.4}} className=" flex gap-x-5 items-center md:self-start ">
+          <motion.a
+            variants={linkVariants}
+            animate="visible"
             href={"https://linkedin.com/in/danielugbeye"}
             target={"_blank"}
             title="linkedin"
@@ -84,30 +118,38 @@ export default function IntroText() {
               size={20}
               className=" text-deep-blue-900 group-hover:text-deep-blue-900/80 transition-all duration-300 "
             />
-          </a>
-          <a
+          </motion.a>
+
+          <motion.a
+            variants={linkVariants}
+            animate="visible"
+            transition={{delay: 0.4}}
             href={"https://github.com/danugbeye"}
             target={"_blank"}
             title="github"
-            className=" rounded-full h-12 bg-off-white aspect-square grid place-items-center overflow-hidden hover:bg-gray-300/50 hover:shadow-gray-200/50 hover:shadow-round-lg focus:shadow-gray-200/50 focus:shadow-round-lg group transition-all duration-300 "
+            className=" rounded-full h-12 bg-off-white aspect-square grid place-items-center overflow-hidden hover:bg-gray-300/50 hover:shadow-gray-200/50 hover:shadow-round-lg focus:shadow-gray-200/50 focus:shadow-round-lg group transition-colors duration-300 "
           >
             <FaGithub
               size={24}
               className=" text-deep-blue-900 group-hover:text-deep-blue-900/80 transition-all duration-300 "
             />
-          </a>
-          <a
+          </motion.a>
+
+          <motion.a
+            variants={linkVariants}
+            animate="visible"
+            transition={{delay: 0.8}}
             href={"https://twitter.com/Ugbeye_Daniel"}
             target={"_blank"}
             title="twitter"
-            className=" rounded-full h-12 bg-off-white aspect-square grid place-items-center overflow-hidden hover:bg-gray-300/50 hover:shadow-gray-200/50 hover:shadow-round-lg focus:shadow-gray-200/50 focus:shadow-round-lg group transition-all duration-300 "
+            className=" rounded-full h-12 bg-off-white aspect-square grid place-items-center overflow-hidden hover:bg-gray-300/50 hover:shadow-gray-200/50 hover:shadow-round-lg focus:shadow-gray-200/50 focus:shadow-round-lg group transition-colors duration-300 "
           >
             <FaTwitter
               size={20}
               className=" text-deep-blue-900 group-hover:text-deep-blue-900/80 transition-all duration-300 "
             />
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </motion.div>
     </motion.div>
   );

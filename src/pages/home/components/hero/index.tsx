@@ -8,7 +8,6 @@ const HeroSectionVariants: Variants = {
   inView: {
     opacity: 1,
     transition: {
-      delay: 0.1,
       when: "beforeChildren"
     },
   },
