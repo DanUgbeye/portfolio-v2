@@ -38,6 +38,7 @@ export default function Navbar() {
         className=" flex items-center py-2 h-20 md:h-20 "
       >
         <a
+          href="/"
           onClick={(e) => {
             e.preventDefault();
             navExpanded && closeNav();
@@ -52,8 +53,8 @@ export default function Navbar() {
         {/* OPEN NAV BUTTON */}
         <button
           className={` ${
-            navExpanded && "hidden"
-          } ml-auto md:hidden z-50 hover:bg-white/5 p-2 rounded-full `}
+            !navExpanded ? " opacity-100 " : " opacity-0 pointer-events-none "
+          } ml-auto md:hidden z-50 hover:bg-white/5 p-2 rounded-full transition-opacity duration-300 `}
           onClick={() => {
             openNav();
           }}
@@ -64,14 +65,14 @@ export default function Navbar() {
         <div
           className={` ${
             navExpanded ? " translate-x-0 " : " translate-x-[200%] "
-          } fixed md:relative w-full max-w-[300px] md:w-fit md:max-w-none bg-deep-blue-900/50 backdrop-blur-md md:bg-transparent h-screen md:h-fit top-0 md:top-[unset] right-0 md:right-[unset] text-sm ml-automd:overflow-none md:translate-x-0 transition-transform duration-[400ms] pt-[5rem] px-2 md:p-0 md:ml-auto m-0  `}
+          } fixed md:relative w-full max-w-[300px] md:w-fit md:max-w-none bg-deep-blue-900/60 backdrop-blur-md md:bg-transparent h-screen md:h-fit top-0 md:top-[unset] right-0 md:right-[unset] text-sm ml-auto md:overflow-hidden md:translate-x-0 transition-transform duration-[400ms] pt-[5rem] px-2 md:p-0 md:ml-auto m-0  `}
           onClick={(e) => e.stopPropagation()}
         >
           {/* CLOSE NAV BUTTON */}
           <button
             className={` ${
-              !navExpanded && "hidden"
-            } ml-auto absolute top-5 right-[2rem] mt- md:hidden z-50 hover:bg-white/5 p-2 rounded-full `}
+              navExpanded ? " opacity-100 " : " opacity-0 pointer-events-none "
+            } ml-auto absolute top-5 right-[2rem] mt- md:hidden z-50 hover:bg-white/5 p-2 rounded-full transition-opacity duration-300 `}
             onClick={() => {
               closeNav();
             }}
@@ -81,18 +82,43 @@ export default function Navbar() {
 
           <div className=" overflow-y-auto h-full p-[1rem] md:p-0 ">
             <div className=" flex flex-col md:flex-row md:items-center gap-x-4 gap-y-4  ">
-              <NavBarLink to={"/"}>Home</NavBarLink>
-
-              <NavBarLink to={"/#about"}>About</NavBarLink>
-
-              <NavBarLink to={"/#skills"}>Skills</NavBarLink>
-
-              <NavBarLink to={"/#services"}>Services</NavBarLink>
-
-              <NavBarLink to={"/#projects"}>Projects</NavBarLink>
+              <NavBarLink
+                className="  text-white/50 sm:text-white hover:bg-white/5 hover:text-white md:hover:text-white focus:bg-white/5 "
+                to={"/"}
+              >
+                Home
+              </NavBarLink>
 
               <NavBarLink
-                className=" bg-violet-light hover:bg-violet-light/70 focus:bg-violet-light text-white "
+                className="  text-white/50 sm:text-white hover:bg-white/5 hover:text-white md:hover:text-white focus:bg-white/5 "
+                to={"/#about"}
+              >
+                About
+              </NavBarLink>
+
+              <NavBarLink
+                className="  text-white/50 sm:text-white hover:bg-white/5 hover:text-white md:hover:text-white focus:bg-white/5 "
+                to={"/#skills"}
+              >
+                Skills
+              </NavBarLink>
+
+              <NavBarLink
+                className="  text-white/50 sm:text-white hover:bg-white/5 hover:text-white md:hover:text-white focus:bg-white/5 "
+                to={"/#services"}
+              >
+                Services
+              </NavBarLink>
+
+              <NavBarLink
+                className="  text-white/50 sm:text-white hover:bg-white/5 hover:text-white md:hover:text-white focus:bg-white/5 "
+                to={"/#projects"}
+              >
+                Projects
+              </NavBarLink>
+
+              <NavBarLink
+                className=" bg-violet-light hover:bg-violet-light/70 focus:bg-violet-light/70 text-white  "
                 to={"/#contact"}
               >
                 Hire Me

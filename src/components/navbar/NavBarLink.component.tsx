@@ -18,7 +18,7 @@ export default function NavBarLink(props: NavBarLinkProps) {
         closeNav();
         return anchorNavigate(props.to);
       }}
-      className={` ${props.className} flex items-center px-3 rounded-lg text-white/50 sm:text-white hover:bg-white/5 hover:text-white md:hover:text-white focus:bg-white/5 h-12 transition-all duration-300 `}
+      className={` ${props.className} flex items-center px-3 rounded-lg h-12 transition-all duration-300 `}
     >
       {props.children}
     </a>
