@@ -4,17 +4,50 @@ import StyledSection from "../StyledSection.component";
 import NavBarLink from "./NavBarLink.component";
 import MenuIcon from "../../assets/svg/menu.svg";
 import CloseIcon from "../../assets/svg/arrow-right.svg";
+import useAnchorNavigate from "../../hooks/useAnchorNavigate.hook";
+import { motion, Variants } from "framer-motion";
+
+const NavbarVariants: Variants = {
+  hidden: {
+    y: -100,
+    transition: {
+      duration: 0.1,
+    },
+  },
+
+  visible: {
+    y: 0,
+    transition: {
+      duration: 0.4,
+      type: "keyframes",
+      ease: "linear",
+    },
+  },
+};
 
 export default function Navbar() {
   const { navExpanded, openNav, closeNav } = useNav();
+  const anchorNavigate = useAnchorNavigate();
 
   return (
     <StyledSection className=" sticky top-0 right-0 left-0 shadow-sm shadow-gray-400/10 z-[1000] bg-deep-blue-900 mb-8 md:mb-2 ">
-      <div className=" flex items-center py-2 h-20 md:h-20 ">
-        <h3 className=" text-lg md:text-2xl flex gap-x-1  ">
+      <motion.div
+        variants={NavbarVariants}
+        animate="visible"
+        initial="hidden"
+        className=" flex items-center py-2 h-20 md:h-20 "
+      >
+        <a
+          onClick={(e) => {
+            e.preventDefault();
+            navExpanded && closeNav();
+            anchorNavigate("/");
+          }}
+          className=" text-lg md:text-2xl flex gap-x-1  "
+        >
           <span className=" font-bold ">Daniel</span>
           <span className=" font-normal ">Ugbeye</span>
-        </h3>
+        </a>
 
         {/* OPEN NAV BUTTON */}
         <button
@@ -67,7 +100,7 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </StyledSection>
   );
 }
