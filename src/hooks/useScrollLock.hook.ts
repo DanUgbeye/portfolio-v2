@@ -19,7 +19,7 @@ export function useScrollLock() {
   const lockScroll = React.useCallback(() => {
     document.body.dataset.scrollLock = "true";
     document.body.style.overflow = "hidden";
-    document.body.style.paddingRight = "var(--scrollbar-compensation)";
+    // document.body.style.paddingRight = "var(--scrollbar-compensation)";
 
     if (isiOS()) {
       scrollOffset.current = window.pageYOffset;
@@ -44,6 +44,7 @@ export function useScrollLock() {
   }, []);
   React.useLayoutEffect(() => {
     const scrollBarCompensation = window.innerWidth - document.body.offsetWidth;
+    console.log(scrollBarCompensation)
     document.body.style.setProperty(
       "--scrollbar-compensation",
       `${scrollBarCompensation}px`
