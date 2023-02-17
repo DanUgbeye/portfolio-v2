@@ -29,6 +29,3 @@ body {
     border-[3px] border-solid border-gray-600/50 
     transition-colors;
 }
-
-*::-webkit-scrollbar-thumb:hover {
-}
