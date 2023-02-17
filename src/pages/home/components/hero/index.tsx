@@ -7,9 +7,6 @@ import { motion, Variants } from "framer-motion";
 const HeroSectionVariants: Variants = {
   inView: {
     opacity: 1,
-    transition: {
-      when: "beforeChildren",
-    },
   },
 
   hidden: {
