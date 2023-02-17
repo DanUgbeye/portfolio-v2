@@ -50,13 +50,13 @@ export default function ContactForm() {
         }}
       >
         {({ isSubmitting, touched, errors }) => (
-          <Form className=" flex flex-col gap-y-8 text-sm w-full ">
+          <Form className=" flex flex-col gap-y-8 text-sm w-full lg:max-w-lg ">
             <fieldset className=" my-4 flex flex-col  ">
               <p className=" text-sm font-bold mb-3 ">
                 I am interested in
               </p>
               
-              <div className=" grid grid-cols-[repeat(auto-fit,_minmax(11.5rem,_1fr))] gap-x-4 gap-y-5 ">
+              <div className=" px-1 grid grid-cols-[repeat(auto-fit,_minmax(11.5rem,_1fr))] gap-x-4 gap-y-5 ">
                 <InterestButton
                   active={interest === "frontend"}
                   onClick={() => {
@@ -133,7 +133,7 @@ export default function ContactForm() {
                 <Field
                   id="name"
                   className={
-                    " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer "
+                    " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer hover:border-white "
                   }
                   type="text"
                   name="name"
@@ -160,7 +160,7 @@ export default function ContactForm() {
                 <Field
                   id="email"
                   className={
-                    " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer "
+                    " bg-transparent h-12 rounded-lg px-4 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 transition-all duration-300 placeholder-transparent peer hover:border-white "
                   }
                   type="email"
                   name="email"
@@ -191,7 +191,7 @@ export default function ContactForm() {
             </div>
 
             <button
-              className=" h-12 bg-violet-light hover:bg-violet-dark/90 disabled:bg-violet-dark/50 disabled:text-violet-light px-4 rounded-lg w-full max-w-sm lg:max-w-lg text-lg transition-all duration-300 tracking-wide hover:tracking-wider outline outline-1 outline-transparent mx-auto hover:outline-violet-dark focus:outline-violet-dark border-2 border-deep-blue-900 "
+              className=" h-12 bg-violet-light hover:bg-violet-dark/90 disabled:bg-violet-dark/50 disabled:text-violet-light px-4 rounded-lg w-full max-w-sm lg:max-w-lg text-lg transition-all duration-300 tracking-wide hover:tracking-wider outline outline-1 outline-transparent mx-auto lg:m-0 hover:outline-violet-dark focus:outline-violet-dark border-2 border-deep-blue-900 "
               type="submit"
               disabled={isSubmitting}
             >

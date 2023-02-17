@@ -6,6 +6,8 @@ export interface ReactElementProps
 
 export type stack = "frontend" | "backend" | "fullstack" | "iot";
 
+export type filter = "all" | "frontend" | "backend" | "fullstack";
+
 export interface Skill {
   name: string;
   svg: string;

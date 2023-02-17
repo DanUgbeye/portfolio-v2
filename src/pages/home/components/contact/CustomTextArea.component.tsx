@@ -14,7 +14,7 @@ export default function CustomTextArea({
   return (
     <fieldset className=" flex flex-col gap-y-1 relative ">
       <textarea
-        className=" bg-transparent rounded-lg px-4 py-2 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 resize-none transition-all duration-300 placeholder-transparent peer "
+        className=" bg-transparent rounded-lg px-4 py-2 border border-border-gray w-full max-w-lg outline-0 focus:border-violet-dark focus:border-2 resize-none transition-all duration-300 placeholder-transparent peer hover:border-white "
         {...field}
         {...props}
       />

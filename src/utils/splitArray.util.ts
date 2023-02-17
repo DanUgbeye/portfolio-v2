@@ -1,5 +1,5 @@
 // splits the project into groups of 3
-function splitProjects<T>(projects: T[]): T[][] {
+function splitProjects<T>(projects: T[]) {
   let splitProjects = [];
   for (let index = 0; index < projects.length; index += 3) {
     let arr: T[] = [];

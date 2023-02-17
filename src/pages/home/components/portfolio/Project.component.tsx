@@ -1,17 +1,38 @@
 import React from "react";
+import { motion, Variants } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import { Project, Skill } from "../../../../../app.interface";
-import useProjectFilter from "../../../../hooks/useProjects.hook";
 
 interface ProjectProps extends Project {
   className?: string;
 }
 
-export default function ProjectCard(props: ProjectProps) {
-  const { filter } = useProjectFilter();
+const ProjectCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.7,
+    transition: {
+      duration: 0.1,
+    },
+  },
 
+  inView: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.05,
+      type: "keyframes",
+      ease: "linear",
+    },
+  },
+};
+
+export default function ProjectCard(props: ProjectProps) {
   return (
-    <div
+    <motion.div
+      variants={ProjectCardVariants}
+      initial="hidden"
+      whileInView="inView"
       className={` ${
         props.className || ""
       } border border-gray-700 bg-deep-blue-700 shadow-round-lg shadow-black/50 rounded-2xl overflow-hidden hover:bg-violet-light hover:scale-[1.01] transition-all duration-300  `}
@@ -20,6 +41,7 @@ export default function ProjectCard(props: ProjectProps) {
         className={` object-fill min-h-full min-w-full w-full overflow-hidden max-h-[15rem] sm:min-h-[full] `}
       >
         <img
+          loading="lazy"
           src={props.image}
           alt={props.name + " image"}
           className={` ${
@@ -73,6 +95,6 @@ export default function ProjectCard(props: ProjectProps) {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
