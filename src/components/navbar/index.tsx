@@ -65,7 +65,7 @@ export default function Navbar() {
         <div
           className={` ${
             navExpanded ? " translate-x-0 " : " translate-x-[200%] "
-          } fixed md:relative w-full max-w-[300px] md:w-fit md:max-w-none bg-deep-blue-900/60 backdrop-blur-md md:bg-transparent h-screen md:h-fit top-0 md:top-[unset] right-0 md:right-[unset] text-sm ml-auto md:overflow-hidden md:translate-x-0 transition-transform duration-[400ms] pt-[5rem] px-2 md:p-0 md:ml-auto m-0  `}
+          } fixed md:relative w-full max-w-[300px] md:w-fit md:max-w-none bg-deep-blue-900/60 backdrop-blur-md md:bg-transparent h-screen md:h-fit top-0 md:top-[unset] right-0 md:right-[unset] text-sm ml-automd:overflow-hidden md:translate-x-0 transition-transform duration-[400ms] pt-[5rem] px-2 md:p-0 md:ml-auto m-0  `}
           onClick={(e) => e.stopPropagation()}
         >
           {/* CLOSE NAV BUTTON */}
