@@ -1,25 +1,12 @@
 import React from "react";
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { SlideFromRightVariants } from "../../../../animation-variants/slide.variants";
 
-const AboutMeVariants: Variants = {
-  inView: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: 0.1,
-    },
-  },
-
-  hidden: {
-    opacity: 0,
-    x: 100,
-  },
-};
 
 export default function AboutMe() {
   return (
     <motion.div
-      variants={AboutMeVariants}
+      variants={SlideFromRightVariants}
       whileInView="inView"
       initial="hidden"
       id="about"
