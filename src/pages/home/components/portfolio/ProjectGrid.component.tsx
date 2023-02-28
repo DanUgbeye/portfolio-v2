@@ -1,26 +1,18 @@
 import React from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { Project } from "../../../../../app.interface";
 import ProjectCard from "./Project.component";
+import { projectGridExit } from "./project.variants";
 
 export interface ProjectGridProps {
   order: number;
   projects: Project[];
 }
 
-const ProjectGridVariants: Variants = {
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 0.1,
-    },
-  },
-};
-
 export default function ProjectGrid(props: ProjectGridProps) {
   return (
     <motion.div
-      variants={ProjectGridVariants}
+      variants={projectGridExit}
       exit="exit"
       className={` grid ${
         props.order % 2 === 0

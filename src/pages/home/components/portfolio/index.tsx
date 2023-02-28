@@ -8,7 +8,7 @@ export default function PortfolioSection() {
   const [filter, setFilter] = React.useState<filter>("all");
   return (
     <StyledSection className="  ">
-      <div id="projects" className=" mt-[3rem] sm:mt-[8.5rem] ">
+      <div id="projects" className=" mt-[8.5rem] ">
         <h4 className=" font-bold mb-3 ">PORTFOLIO SHOWCASE</h4>
 
         <p className=" text-sm mb-5 font-normal max-w-lg ">

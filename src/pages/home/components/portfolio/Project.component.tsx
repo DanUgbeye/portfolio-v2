@@ -1,36 +1,18 @@
 import React from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import { Project, Skill } from "../../../../../app.interface";
+import { randomKey } from "../../../../utils/randomKey.util";
+import { projectCardPopIn } from "./project.variants";
 
 interface ProjectProps extends Project {
   className?: string;
 }
 
-const ProjectCardVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.7,
-    transition: {
-      duration: 0.1,
-    },
-  },
-
-  inView: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.05,
-      type: "keyframes",
-      ease: "linear",
-    },
-  },
-};
-
 export default function ProjectCard(props: ProjectProps) {
   return (
     <motion.div
-      variants={ProjectCardVariants}
+      variants={projectCardPopIn}
       initial="hidden"
       whileInView="inView"
       className={` ${
@@ -62,9 +44,9 @@ export default function ProjectCard(props: ProjectProps) {
           <div className=" font-bold min-w-fit ">Technologies </div>
 
           <div className=" flex gap-4 flex-wrap items-center ">
-            {props.stack.map((stack: Skill, index) => (
+            {props.stack.map((stack: Skill) => (
               <img
-                key={index}
+                key={randomKey()}
                 src={stack.svg}
                 alt={stack.name}
                 className={` ${
