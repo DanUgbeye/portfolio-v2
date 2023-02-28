@@ -1,92 +1,45 @@
 import React from "react";
 import useAnchorNavigate from "../../../../hooks/useAnchorNavigate.hook";
 import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { motion, Variants } from "framer-motion";
-
-const HeroTextVariants: Variants = {
-  inView: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      when: "beforeChildren",
-    },
-  },
-
-  hidden: {
-    opacity: 0,
-  },
-};
-
-const TextVariants: Variants = {
-  inView: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "tween",
-      ease: "easeOut",
-      duration: 0.5,
-    },
-  },
-
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-};
-
-const linkVariants: Variants = {
-  visible: {
-    y: [-2.5, 2.5],
-    transition: {
-      repeat: Infinity,
-      repeatType: "mirror",
-      duration: 1,
-    },
-  },
-};
-
-const slideInVariants: Variants = {
-  inView: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay: 1,
-      type: "spring",
-      when: "beforeChildren",
-    },
-  },
-  hidden: {
-    x: -100,
-    opacity: 0,
-    transition: {},
-  },
-};
+import { motion } from "framer-motion";
+import {
+  heroTextStagger,
+  linkAnimation0,
+  linkAnimation1,
+  linkAnimation2,
+  slideFromRight,
+  textSlideInFromBotton,
+} from "./hero.variants";
 
 export default function IntroText() {
   const anchorNavigate = useAnchorNavigate();
 
   return (
     <motion.div
-      variants={HeroTextVariants}
+      variants={heroTextStagger}
+      initial="hidden"
+      whileInView="inView"
       className=" max-w-3xl text-sm flex flex-col relative mb-12 w-full "
     >
       <motion.div className=" flex flex-col gap-y-8 ">
         <motion.h1
-          variants={TextVariants}
+          variants={textSlideInFromBotton}
           className=" text-3xl md:text-4xl font-bold text-white "
         >
           Hello, I'm Daniel Ugbeye
         </motion.h1>
 
-        <motion.p variants={TextVariants} className=" text-white font-normal">
-          I am a full stack web developer from Nigeria. I work to design, test,
-          and implement various software applications. I write codes not only
-          for the user's front end web applications or mobile applications but
-          also write API codes that sits in the middle, the server code that
-          sits in the back to connect and communicate with databases.
+        <motion.p
+          variants={textSlideInFromBotton}
+          className=" text-white font-normal"
+        >
+          A full-stack web developer with experience in both frontend and
+          backend technologies. I specialize in creating high-quality,
+          responsive, and user-friendly web applications. Take a look at my
+          portfolio to learn more about my skills and expertise.
         </motion.p>
 
-        <motion.div variants={TextVariants}>
+        <motion.div variants={textSlideInFromBotton}>
           <button
             onClick={() => {
               anchorNavigate("/#contact");
@@ -99,15 +52,13 @@ export default function IntroText() {
       </motion.div>
 
       <motion.div
-        variants={slideInVariants}
+        variants={slideFromRight}
         className=" hidden md:flex flex-col md:flex-row gap-x-6 gap-y-6 md:items-center mt-16 "
       >
         <div className=" font-bold my-auto md:self-start ">Check out my</div>
-        <motion.div
-          className=" flex gap-x-5 items-center md:self-start "
-        >
+        <motion.div className=" flex gap-x-5 items-center md:self-start ">
           <motion.a
-            variants={linkVariants}
+            variants={linkAnimation0}
             animate="visible"
             href={"https://linkedin.com/in/danielugbeye"}
             target={"_blank"}
@@ -121,9 +72,8 @@ export default function IntroText() {
           </motion.a>
 
           <motion.a
-            variants={linkVariants}
+            variants={linkAnimation1}
             animate="visible"
-            transition={{ delay: 0.4 }}
             href={"https://github.com/danugbeye"}
             target={"_blank"}
             title="github"
@@ -136,9 +86,8 @@ export default function IntroText() {
           </motion.a>
 
           <motion.a
-            variants={linkVariants}
+            variants={linkAnimation2}
             animate="visible"
-            transition={{ delay: 0.8 }}
             href={"https://twitter.com/Ugbeye_Daniel"}
             target={"_blank"}
             title="twitter"
