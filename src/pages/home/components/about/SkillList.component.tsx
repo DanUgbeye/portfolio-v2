@@ -1,13 +1,12 @@
 import React from "react";
 import Skill from "./Skill.component";
 import { SkillType } from "../../../../../app.interface";
-import { motion } from "framer-motion";
-import { SlideFromBottomVariants } from "../../../../animation-variants/slide.variants";
+import { motion, Variants } from "framer-motion";
+import { SlideFromBottom } from "../../../../assets/animation.variants";
 import { randomKey } from "../../../../utils/randomKey.util";
 
 // data import
 import Skills from "../../../../data/skills/skills.data";
-
 
 export default function SkillList() {
   const allSkills = React.useMemo<SkillType[]>(
@@ -29,17 +28,13 @@ export default function SkillList() {
   );
 
   return (
-    <motion.div
-      transition={{
-        staggerChildren: 0.4,
-        when: "beforeChildren"
-      }}
+    <div
       id="skills"
-      className=" flex flex-col gap-x-9 gap-y-10 font-bold text-sm text-white w-full "
+      className=" flex flex-col gap-x-9 gap-y-16 font-bold text-sm text-white w-full "
     >
       {allSkills.map((skillType: SkillType) => (
         <motion.div
-          variants={SlideFromBottomVariants}
+          variants={SlideFromBottom}
           whileInView="inView"
           initial="hidden"
           key={randomKey()}
@@ -54,6 +49,6 @@ export default function SkillList() {
           </div>
         </motion.div>
       ))}
-    </motion.div>
+    </div>
   );
 }
