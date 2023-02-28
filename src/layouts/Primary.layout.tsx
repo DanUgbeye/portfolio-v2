@@ -14,7 +14,7 @@ export default function PrimaryLayout() {
 
   return (
     <main
-      className=" bg-gray-200 dark:bg-deep-blue-700 text-gray-800 dark:text-gray-200 flex flex-col min-h-screen h-full tracking-wide "
+      className=" bg-gray-200 dark:bg-deep-blue-700 text-gray-800 dark:text-gray-200 flex flex-col min-h-screen h-full tracking-wide overflow-hidden "
       onClick={() => handleGlobalClick()}
     >
       <Navbar />
