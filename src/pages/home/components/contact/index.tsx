@@ -2,37 +2,8 @@ import React from "react";
 import StyledSection from "../../../../components/StyledSection.component";
 import HelloImage from "../../../../assets/svg/hello-image.svg";
 import ContactForm from "./ContactForm.component";
-import { Variants, motion } from "framer-motion";
-
-const SlideInLeftVariants: Variants = {
-  inView: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: 0.1,
-    },
-  },
-
-  hidden: {
-    opacity: 0,
-    x: -100,
-  },
-};
-
-const SlideInRightVariants: Variants = {
-  inView: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: 0.1,
-    },
-  },
-
-  hidden: {
-    opacity: 0,
-    x: 100,
-  },
-};
+import { motion } from "framer-motion";
+import { SlideFromLeft, SlideFromRight } from "../../../../assets/animation.variants";
 
 export default function ContactSection() {
   return (
@@ -42,7 +13,7 @@ export default function ContactSection() {
         className=" overflow-hidden pt-12 sm:pt-[10rem] pb-12 sm:pb-[10rem] flex gap-x-10 gap-y-5 "
       >
         <motion.div
-          variants={SlideInLeftVariants}
+          variants={SlideFromLeft}
           initial="hidden"
           whileInView="inView"
           className=" w-full "
@@ -58,7 +29,7 @@ export default function ContactSection() {
         </motion.div>
 
         <motion.div
-          variants={SlideInRightVariants}
+          variants={SlideFromRight}
           initial="hidden"
           whileInView="inView"
           className=" w-full hidden lg:flex "
