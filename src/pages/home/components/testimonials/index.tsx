@@ -4,18 +4,35 @@ import testimonials from "../../../../data/testimonials/testimonials.data";
 import Testimonial from "./Testimonial.component";
 import { Carousel } from "react-responsive-carousel";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { randomKey } from "../../../../utils/randomKey.util";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { motion } from "framer-motion";
+import { textSlideIn } from "./testimonials.variants";
 
 export default function TestimonialSection() {
   return (
     <StyledSection className=" bg-deep-blue-900 ">
-      <div className=" pt-[13rem] sm:pt-[18rem] pb-[4rem] sm:pb-[8.5rem] relative ">
-        <h4 className=" font-bold mb-3 ">TESTIMONIALS</h4>
+      <div className=" pt-[18rem] pb-[8.5rem] relative ">
+        <div className=" mb-2 ">
+          <motion.h4
+            variants={textSlideIn}
+            initial="hidden"
+            whileInView="visible"
+            className=" font-bold mb-3 "
+          >
+            TESTIMONIALS
+          </motion.h4>
 
-        <p className=" text-sm font-normal max-w-lg mb-2 ">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet nam
-          nam imperdiet maecenas vivamus.
-        </p>
+          <motion.p
+            variants={textSlideIn}
+            initial="hidden"
+            whileInView="visible"
+            className=" text-sm font-normal max-w-lg "
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet nam
+            nam imperdiet maecenas vivamus.
+          </motion.p>
+        </div>
 
         <Carousel
           centerMode={false}
@@ -54,8 +71,8 @@ export default function TestimonialSection() {
             )
           }
         >
-          {testimonials.map((testimonial, index) => (
-            <Testimonial key={index} {...testimonial} />
+          {testimonials.map((testimonial) => (
+            <Testimonial key={randomKey()} {...testimonial} />
           ))}
         </Carousel>
       </div>
