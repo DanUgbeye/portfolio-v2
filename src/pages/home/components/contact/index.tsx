@@ -3,7 +3,10 @@ import StyledSection from "../../../../components/StyledSection.component";
 import HelloImage from "../../../../assets/svg/hello-image.svg";
 import ContactForm from "./ContactForm.component";
 import { motion } from "framer-motion";
-import { SlideFromLeft, SlideFromRight } from "../../../../assets/animation.variants";
+import {
+  SlideFromLeft,
+  SlideFromRight,
+} from "../../../../assets/animation.variants";
 
 export default function ContactSection() {
   return (
@@ -37,7 +40,7 @@ export default function ContactSection() {
           <img
             loading="lazy"
             src={HelloImage}
-            alt={"contact me"}
+            alt={"hello"}
             className=" self-start object-cover min-h-full rounded-xl "
           />
         </motion.div>
