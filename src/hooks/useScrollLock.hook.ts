@@ -42,9 +42,10 @@ export function useScrollLock() {
 
     delete document.body.dataset.scrollLock;
   }, []);
+  
   React.useLayoutEffect(() => {
     const scrollBarCompensation = window.innerWidth - document.body.offsetWidth;
-    console.log(scrollBarCompensation)
+
     document.body.style.setProperty(
       "--scrollbar-compensation",
       `${scrollBarCompensation}px`

@@ -12,7 +12,7 @@ export default function ProjectFilter({
   setFilter,
 }: ProjectFilterProps) {
   return (
-    <div className=" flex flex-wrap gap-x-3 gap-y-3 md:gap-x-6  py-2 ">
+    <div className=" flex flex-wrap gap-x-3 gap-y-3 md:gap-x-6 py-2 ">
       <StackFilterButton
         filterActive={filter === "all"}
         onClick={() => setFilter("all")}

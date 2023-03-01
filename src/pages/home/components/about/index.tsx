@@ -5,8 +5,8 @@ import SkillList from "./SkillList.component";
 
 export default function AboutSection() {
   return (
-    <StyledSection className=" bg-deep-blue-900 pt-[4rem] sm:pt-[9rem] pb-[18rem] sm:pb-[25rem] ">
-      <div className=" flex flex-col gap-y-16 sm:gap-y-28 overflow-hidden ">
+    <StyledSection className=" bg-deep-blue-900 ">
+      <div className=" flex flex-col gap-y-16 sm:gap-y-28 overflow-hidden pt-[9rem] pb-[25rem]  ">
         <AboutMe />
         <SkillList />
       </div>

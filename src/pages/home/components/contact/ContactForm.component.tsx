@@ -52,10 +52,8 @@ export default function ContactForm() {
         {({ isSubmitting, touched, errors }) => (
           <Form className=" flex flex-col gap-y-8 text-sm w-full lg:max-w-lg ">
             <fieldset className=" my-4 flex flex-col  ">
-              <p className=" text-sm font-bold mb-3 ">
-                I am interested in
-              </p>
-              
+              <p className=" text-sm font-bold mb-3 ">I am interested in</p>
+
               <div className=" px-1 grid grid-cols-[repeat(auto-fit,_minmax(11.5rem,_1fr))] gap-x-4 gap-y-5 ">
                 <InterestButton
                   active={interest === "frontend"}
@@ -68,7 +66,7 @@ export default function ContactForm() {
                   }}
                 >
                   <span className="  ">Frontend</span>
-                  <span className=" ml-1 ">Web Development</span>
+                  <span className=" ml-1 ">Web&nbsp;Development</span>
                 </InterestButton>
 
                 <InterestButton
@@ -82,7 +80,7 @@ export default function ContactForm() {
                   }}
                 >
                   <span className="  ">Backend</span>
-                  <span className=" ml-1 ">Web Development</span>
+                  <span className=" ml-1 ">Web&nbsp;Development</span>
                 </InterestButton>
 
                 <InterestButton
@@ -110,7 +108,7 @@ export default function ContactForm() {
                   }}
                 >
                   <span className="  ">IOT</span>
-                  <span className=" ml-1 ">Systems Development</span>
+                  <span className=" ml-1 ">Systems&nbsp;Development</span>
                 </InterestButton>
 
                 <InterestButton
@@ -191,7 +189,7 @@ export default function ContactForm() {
             </div>
 
             <button
-              className=" h-12 bg-violet-light hover:bg-violet-dark/90 disabled:bg-violet-dark/50 disabled:text-violet-light px-4 rounded-lg w-full max-w-sm lg:max-w-lg text-lg transition-all duration-300 tracking-wide hover:tracking-wider outline outline-1 outline-transparent mx-auto lg:m-0 hover:outline-violet-dark focus:outline-violet-dark border-2 border-deep-blue-900 "
+              className=" h-12 bg-violet-light hover:bg-violet-dark/90 disabled:bg-violet-dark/50 disabled:text-violet-light px-4 rounded-lg w-full max-w-lg lg:max-w-xl text-lg transition-all duration-300 tracking-wide hover:tracking-wider outline outline-1 outline-transparent mx-auto lg:m-0 hover:outline-violet-dark focus:outline-violet-dark border-2 border-deep-blue-700 "
               type="submit"
               disabled={isSubmitting}
             >

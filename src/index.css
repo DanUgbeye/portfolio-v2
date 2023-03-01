@@ -18,15 +18,19 @@ body {
 }
 
 *::-webkit-scrollbar {
-  @apply bg-transparent;
+  @apply bg-transparent w-[14px];
 }
 
 *::-webkit-scrollbar-track {
-  @apply rounded-xl;
+  @apply my-2;
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply rounded-xl bg-deep-blue-900 
-    border-[3px] border-solid border-gray-600/50 
+  @apply rounded-full bg-deep-blue-900 
+    border-[1px] border-solid border-gray-500 
     transition-colors;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
 }
