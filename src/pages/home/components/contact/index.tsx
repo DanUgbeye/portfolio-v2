@@ -3,10 +3,7 @@ import StyledSection from "../../../../components/StyledSection.component";
 import HelloImage from "../../../../assets/svg/hello-image.svg";
 import ContactForm from "./ContactForm.component";
 import { motion } from "framer-motion";
-import {
-  SlideFromLeft,
-  SlideFromRight,
-} from "../../../../assets/animation.variants";
+import { SlideFromLeft, SlideFromRight } from "./contact.variants";
 
 export default function ContactSection() {
   return (

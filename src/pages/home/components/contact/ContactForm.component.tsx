@@ -189,7 +189,7 @@ export default function ContactForm() {
             </div>
 
             <button
-              className=" h-12 bg-violet-light hover:bg-violet-dark/90 disabled:bg-violet-dark/50 disabled:text-violet-light px-4 rounded-lg w-full max-w-lg lg:max-w-xl text-lg transition-all duration-300 tracking-wide hover:tracking-wider outline outline-1 outline-transparent mx-auto lg:m-0 hover:outline-violet-dark focus:outline-violet-dark border-2 border-deep-blue-900 "
+              className=" h-12 bg-violet-light hover:bg-violet-dark/90 disabled:bg-violet-dark/50 disabled:text-violet-light px-4 rounded-lg w-full max-w-lg lg:max-w-xl text-lg transition-all duration-300 tracking-wide hover:tracking-wider outline outline-1 outline-transparent mx-auto lg:m-0 hover:outline-violet-dark focus:outline-violet-dark border-2 border-deep-blue-700 "
               type="submit"
               disabled={isSubmitting}
             >
