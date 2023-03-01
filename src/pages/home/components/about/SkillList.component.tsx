@@ -1,8 +1,8 @@
 import React from "react";
 import Skill from "./Skill.component";
 import { SkillType } from "../../../../../app.interface";
-import { motion, Variants } from "framer-motion";
-import { SlideFromBottom } from "../../../../assets/animation.variants";
+import { motion } from "framer-motion";
+import { SlideFromBottom } from "./about.variants";
 import { randomKey } from "../../../../utils/randomKey.util";
 
 // data import

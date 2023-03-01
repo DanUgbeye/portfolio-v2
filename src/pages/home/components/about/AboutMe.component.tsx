@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { SlideFromRight } from "../../../../assets/animation.variants";
+import { SlideFromRight } from "./about.variants";
 
 
 export default function AboutMe() {
