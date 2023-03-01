@@ -27,7 +27,7 @@ body {
 
 *::-webkit-scrollbar-thumb {
   @apply rounded-full bg-deep-blue-900 
-    border-[2px] border-solid border-gray-500 
+    border-[1px] border-solid border-gray-500 
     transition-colors;
 }
 
